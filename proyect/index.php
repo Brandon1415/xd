@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
+<?php
+$base_url = "http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect/";
+?>
+
 <body>
   <header class="header">
     <div class="header-left">
@@ -25,7 +29,10 @@
       <div class="menu-section">
         <h2><i class="fas fa-user-graduate"></i> Estudiantes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
-          <li><i class="fas fa-pen"></i> Inscripciones</li>
+      <li><a href="<?php echo $base_url; ?>estudiantes/generar_solicitud/solicitud.php">
+        <i class="fas fa-pen"></i> Formato de prácticas</a>
+      </li>
+
           <li><i class="fas fa-file-alt"></i> Documentos</li>
           <li><i class="fas fa-exclamation-triangle"></i> Reportes</li>
         </ul>
