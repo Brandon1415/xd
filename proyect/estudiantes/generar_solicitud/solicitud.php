@@ -23,7 +23,7 @@ $ciudad = "Cayambe";
 $dia = date("d");
 $mes = date("m");
 $anio = date("Y");
-$ciudades = ["Cayambe", "Quito", "Otavalo", "Ibarra"];
+$ciudades = ["Cayambe"];
 $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
 ?>
 

@@ -22,7 +22,7 @@ body {
       }
       
       body {
-        background-image: url(fondo.jpg);
+        background-image: url(img/fondo.jpg);
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -363,7 +363,7 @@ body {
 
 /* Pie de página */
 .footer {
-    background-color: #2c3e50;
+    background-color: #06080a;
     color: white;
     padding: 10px;
     text-align: center;
@@ -492,7 +492,7 @@ form label {
 }
 
 .footer {
-  background-color: #003366;
+  background-color: #111213;
   color: white;
   text-align: center;
   padding: 1rem;
