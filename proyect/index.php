@@ -8,13 +8,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <?php
-$base_url = "http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect/";
+$base_url = "http://localhost/xd/proyect/";
 ?>
 
 <body>
   <header class="header">
     <div class="header-left">
-      <img src="INT.PNG" alt="Logo INT" class="logo" />
+      <img src="img/INT.png" alt="Logo INT" class="logo" />
       <h1>SISTEMA DE GESTIÓN ACADÉMICA - INT</h1>
     </div>
     <div class="header-right">
@@ -41,9 +41,18 @@ $base_url = "http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect
       <div class="menu-section">
         <h2><i class="fas fa-chalkboard-teacher"></i> Docentes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
-          <li><i class="fas fa-pen"></i> Evaluaciones</li>
-          <li><i class="fas fa-file-alt"></i> Planificaciones</li>
-          <li><i class="fas fa-exclamation-triangle"></i> Incidencias</li>
+          <li><a href="<?php echo $base_url; ?>Docentes/tutorados.php">
+        <i class="fas fa-pen"></i> Tutorados</a>
+      </li>
+          <li><a href="<?php echo $base_url; ?>Docentes/seguimiento.php">
+        <i class="fas fa-pen"></i>Seguimiento</a>
+      </li>
+          <li><a href="<?php echo $base_url; ?>Docentes/revisar_informes.php">
+        <i class="fas fa-pen"></i> Revisión de Informes </a>
+      </li>
+      <li><a href="<?php echo $base_url; ?>Docentes/notificaciones.php">
+        <i class="fas fa-pen"></i> Enviar Notificaciones</a>
+      </li>
         </ul>
       </div>
 
@@ -65,13 +74,13 @@ $base_url = "http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect
 
       <div class="dashboard-panel">
         <h2>Panel de Control</h2>
-        <p>Bienvenido al Sistema de Gestión Académica. Seleccione una opción del menú lateral para comenzar.</p>
+        <p>Bienvenido al Sistema de Gestión Documental. Seleccione una opción del menú lateral para comenzar.</p>
       </div>
     </div>
   </div>
 
   <div class="footer">
-    <p>Sistema de Gestión Académica © 2025 - Instituto Superior</p>
+    <p>Sistema de Gestión Documental © 2025 - Instituto Superior</p>
   </div>
 
   <script>

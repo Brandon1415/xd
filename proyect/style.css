@@ -22,7 +22,7 @@ body {
       }
       
       body {
-        background-image: url(fondo.jpg);
+        background-image: url(img/fondo.jpg);
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
