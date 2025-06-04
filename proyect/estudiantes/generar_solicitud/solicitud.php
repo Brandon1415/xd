@@ -10,9 +10,9 @@
     .main-content h4 {
       margin-top: 2rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #0066cc;
+      border-bottom: 2px solidrgb(210, 6, 6);
       padding-bottom: 0.5rem;
-      color: #003366;
+      color:rgb(0, 1, 2);
     }
   </style>
 </head>
@@ -20,9 +20,6 @@
 <?php
 $base_url = "http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect/";
 $ciudad = "Cayambe";
-$dia = date("d");
-$mes = date("m");
-$anio = date("Y");
 $ciudades = ["Cayambe"];
 $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
 ?>
@@ -44,7 +41,7 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
         <h2><i class="fas fa-user-graduate"></i> Estudiantes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
           <li><a href="<?= $base_url; ?>estudiantes/generar_solicitud/solicitud.php"><i class="fas fa-pen"></i> Formato de prácticas</a></li>
-          <li><i class="fas fa-file-alt"></i> Documentos</li>
+          <li><a href="<?= $base_url; ?>estudiantes/subir_informe/subir_informe.php"><i class="fas fa-pen"></i>Subir informe </a></li>
           <li><i class="fas fa-exclamation-triangle"></i> Reportes</li>
         </ul>
       </div>
@@ -57,31 +54,35 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
         
         <!-- Información General -->
         <section>
-          <h4>📌 Información General</h4>
-          <div class="form-grid">
-            <select name="ciudad" required>
-              <?php foreach ($ciudades as $c): ?>
-                <option value="<?= $c ?>" <?= $c == $ciudad ? 'selected' : '' ?>><?= $c ?></option>
-              <?php endforeach; ?>
-            </select>
+  <h4>📌 Información General</h4>
+  <div class="form-grid">
+    
+    <select name="ciudad" id="ciudad" required>
+      <option value="">Seleccione una ciudad</option>
+      <?php foreach ($ciudades as $c): ?>
+        <option value="<?= htmlspecialchars($c) ?>" <?= $c == $ciudad ? 'selected' : '' ?>>
+          <?= htmlspecialchars($c) ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+            <input type="number" id="horas" name="horas" placeholder="Total horas" required value="<?= htmlspecialchars($horas ?? '') ?>">
 
-            <input type="text" name="dia" value="<?= $dia ?>" readonly>
-            <input type="text" name="mes" value="<?= $mes ?>" readonly>
-            <input type="text" name="anio" value="<?= $anio ?>" readonly>
-
-            <input type="date" name="fecha_inicio" required>
-            <input type="date" name="fecha_fin" required>
-
-            <select name="tipo" required>
-              <option value="">Seleccione tipo de práctica</option>
-              <?php foreach ($tipos_practica as $tipo): ?>
-                <option value="<?= $tipo ?>"><?= $tipo ?></option>
-              <?php endforeach; ?>
-            </select>
-
-            <input type="number" name="horas" placeholder="Total horas" required>
-          </div>
+    <select name="tipo" id="tipo" required>
+      <option value="">Seleccione tipo de práctica</option>
+      <?php foreach ($tipos_practica as $t): ?>
+        <option value="<?= htmlspecialchars($t) ?>" <?= ($tipo ?? '') == $t ? 'selected' : '' ?>>
+          <?= htmlspecialchars($t) ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+    <br>
+        <label for="fecha_inicio">Fecha de inicio:</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required value="<?= htmlspecialchars($fecha_inicio ?? '') ?>">
+        <label for="fecha_fin">Fecha de fin:</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" required value="<?= htmlspecialchars($fecha_fin ?? '') ?>">
+        </div>
         </section>
+
 
         <!-- Visitas Programadas -->
         <section>
@@ -89,9 +90,12 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
           <div class="form-grid">
             <?php for ($i = 1; $i <= 3; $i++): ?>
               <input type="date" name="v<?= $i ?>_fecha" placeholder="Fecha visita <?= $i ?>" required>
-              <input type="text" name="v<?= $i ?>_avance" placeholder="Avance horas <?= $i ?>" required>
+              <input type="text" name="v<?= $i ?>_avance" placeholder="Horas avanzadas <?= $i ?>" required>
             <?php endfor; ?>
           </div>
+<br>
+
+          <label for="Indicaciones">Indicaciones: Ingresar las fechas en las que desea ser visitado </label>
         </section>
 
         <!-- Estudiante -->
@@ -101,7 +105,7 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
             <input type="text" name="nombre" placeholder="Nombre completo" required>
             <input type="text" name="cedula" placeholder="Cédula" required>
             <input type="text" name="carrera" placeholder="Carrera" required>
-            <input type="text" name="nivel" placeholder="Nivel / Paralelo" required>
+            <input type="text" name="nivel" placeholder='Nivel y Paralelo (1 "A")' required>
             <input type="text" name="contacto" placeholder="Contacto" required>
             <input type="email" name="correo" placeholder="Correo" required>
           </div>
@@ -222,7 +226,7 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
     }
 
     .btn.btn-primary:hover {
-      background-color: #004999;
+      background-color:rgb(232, 19, 11);
     }
   </style>
 </body>

@@ -46,7 +46,7 @@ $contenido = isset($contenido) ? $contenido : "";
   </div>
 
   <div class="footer">
-    <p>Sistema de Gestión Académica © 2025 - Instituto Superior</p>
+    <p>Sistema de Gestión de Archivos © 2025 - Instituto Superior</p>
   </div>
 
   <script>

@@ -46,7 +46,7 @@
 <body class="container my-4">
 <br>
 
-<p class="text-end"><?= sanitize($_POST['ciudad'] ?? 'Cayambe') ?>, <?= sanitize($_POST['dia']) ?> de <?= sanitize($_POST['mes']) ?> de <?= sanitize($_POST['anio']) ?></p>
+                  <p class="text-end"><?= sanitize($_POST['ciudad'] ?? 'Cayambe') ?>, <?= sanitize($_POST['dia']) ?> de <?= sanitize($_POST['mes']) ?> de <?= sanitize($_POST['anio']) ?></p>
 <p>PhD. Juan Ushiña G. <br>
     RECTOR DEL INSTITUTO SUPERIOR TECNOLÓGICO “NELSON TORRES”<br>
     <br>

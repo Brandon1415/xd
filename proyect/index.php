@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <?php
-$base_url = "http://localhost/xd/proyect/";
+$base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
 ?>
 
 <body>
   <header class="header">
     <div class="header-left">
       <img src="img/INT.png" alt="Logo INT" class="logo" />
-      <h1>SISTEMA DE GESTIÓN ACADÉMICA - INT</h1>
+      <h1>SISTEMA DE GESTIÓN DE ARCHIVOS - INT</h1>
     </div>
     <div class="header-right">
       <button class="logout-btn">
@@ -30,10 +30,12 @@ $base_url = "http://localhost/xd/proyect/";
         <h2><i class="fas fa-user-graduate"></i> Estudiantes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
       <li><a href="<?php echo $base_url; ?>estudiantes/generar_solicitud/solicitud.php">
-        <i class="fas fa-pen"></i> Formato de prácticas</a>
+        <i class="fas fa-pen"></i> Formato de solicitud prácticas</a>
       </li>
 
-          <li><i class="fas fa-file-alt"></i> Documentos</li>
+          <li><a href="<?php echo $base_url; ?>./estudiantes/subir_informe/subir_informe.php">
+        <i class="fas fa-pen"></i> Subir informes</a> 
+      </li>
           <li><i class="fas fa-exclamation-triangle"></i> Reportes</li>
         </ul>
       </div>
