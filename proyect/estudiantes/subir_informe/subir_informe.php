@@ -7,26 +7,78 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="../../style.css">
   <style>
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+    }
+
     .main-content h4 {
       margin-top: 2rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solidrgb(210, 6, 6);
+      border-bottom: 2px solid rgb(210, 6, 6);
       padding-bottom: 0.5rem;
-      color:rgb(0, 1, 2);
+      color: rgb(0, 1, 2);
+    }
+
+    .modern-form {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      padding: 2rem;
+    }
+
+    .modern-form section {
+      margin-bottom: 2rem;
+    }
+
+    .modern-form h4 {
+      font-size: 1.25rem;
+      color: #003366;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #0066cc;
+      padding-bottom: 0.5rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .form-grid input {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .form-footer {
+      text-align: center;
+    }
+
+    .btn.btn-primary {
+      background-color: #0066cc;
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .btn.btn-primary:hover {
+      background-color: rgb(232, 19, 11);
     }
   </style>
 </head>
 
 <?php
 $base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
-// Ruta del archivo JSON con notificaciones
-$archivo_notificaciones = 'subir_informe/notificacion.json'; // Ajusta la ruta si está en otro lado
-
-// Cargar notificaciones desde el archivo JSON
-$notificaciones = file_exists($archivo_notificaciones)
-    ? json_decode(file_get_contents($archivo_notificaciones), true)
-    : [];
-
 ?>
 
 <body>
@@ -46,16 +98,38 @@ $notificaciones = file_exists($archivo_notificaciones)
         <h2><i class="fas fa-user-graduate"></i> Estudiantes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
           <li><a href="<?= $base_url; ?>estudiantes/generar_solicitud/solicitud.php"><i class="fas fa-pen"></i> Formato de prácticas</a></li>
-          <li><a href="<?= $base_url; ?>estudiantes/subir_informe/subir_informe.php"><i class="fas fa-pen"></i>Subir informe </a></li>
+          <li><a href="<?= $base_url; ?>estudiantes/subir_informe/subir_informe.php"><i class="fas fa-pen"></i> Subir informe</a></li>
           <li><i class="fas fa-exclamation-triangle"></i> Reportes</li>
         </ul>
       </div>
+    </div>
 
+    <!-- Contenido de la parte derecha -->
+    <div class="main-content">
+      <h4>Subir Informe de Prácticas</h4>
+      <form class="modern-form" action="procesar_informe.php" method="POST" enctype="multipart/form-data">
+  <section>
+    <label for="cedula">Cédula del Estudiante</label>
+    <input type="text" name="cedula" id="cedula" required>
+  </section>
 
+  <section>
+    <label for="informe">Informe en PDF</label>
+    <input type="file" name="informe" id="informe" accept=".pdf" required>
+  </section>
+
+  <label><strong>Nota:</strong> El nombre del archivo debe tener el formato: <em>GARCIA_TOCAIN_MICHAEL_ENRIQUE.pdf</em></label>
+
+  <div class="form-footer">
+    <button type="submit" class="btn btn-primary">Subir Informe</button>
+  </div>
+</form>
 
     </div>
+  </div>
+
   <div class="footer">
-    <p>Sistema de Gestión Académica © 2025 - Instituto Superior</p>
+    <p>Sistema de Gestión de Archivos © 2025 - Instituto Superior</p>
   </div>
 
   <script>
@@ -77,59 +151,5 @@ $notificaciones = file_exists($archivo_notificaciones)
       });
     });
   </script>
-
-  <style>
-    .modern-form {
-      padding: 2rem;
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-
-    .modern-form section {
-      margin-bottom: 2rem;
-    }
-
-    .modern-form h4 {
-      font-size: 1.25rem;
-      color: #003366;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #0066cc;
-      padding-bottom: 0.5rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .form-grid input,
-    .form-grid select {
-      padding: 0.75rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    .form-footer {
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .btn.btn-primary {
-      background-color: #0066cc;
-      color: white;
-      padding: 0.75rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .btn.btn-primary:hover {
-      background-color:rgb(232, 19, 11);
-    }
-  </style>
 </body>
 </html>

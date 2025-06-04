@@ -2,7 +2,7 @@
 </div> <!-- Cierra container -->
 
 <div class="footer">
-  <p>Sistema de Gestión Documental © 2025 - Instituto Superior</p>
+  <p>Sistema de Gestión de Archivos © 2025 - Instituto Superior</p>
 </div>
 
 <script>

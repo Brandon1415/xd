@@ -16,7 +16,7 @@
         font-family: Arial, sans-serif;
         font-size: 10pt;
         line-height: 1.6;
-        background-image: url('http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect/img/imagen_Practicas.png');
+        background-image: url('http://localhost/Proyecto_Instituto/xd/proyect/img/imagen_Practicas.png');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -45,8 +45,16 @@
 <body>
 <body class="container my-4">
 <br>
+<?php
+setlocale(LC_TIME, 'es_ES.UTF-8', 'es_ES', 'esp', 'spanish');
+date_default_timezone_set('America/Guayaquil');
 
-                  <p class="text-end"><?= sanitize($_POST['ciudad'] ?? 'Cayambe') ?>, <?= sanitize($_POST['dia']) ?> de <?= sanitize($_POST['mes']) ?> de <?= sanitize($_POST['anio']) ?></p>
+?>
+
+<p style="text-align: right;">
+    <?= sanitize($_POST['ciudad'] ?? 'Cayambe') ?>, <?= date('j') ?> de <?= strftime('%B') ?> de <?= date('Y') ?>
+</p>
+
 <p>PhD. Juan Ushiña G. <br>
     RECTOR DEL INSTITUTO SUPERIOR TECNOLÓGICO “NELSON TORRES”<br>
     <br>

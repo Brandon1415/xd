@@ -18,7 +18,7 @@
 </head>
 
 <?php
-$base_url = "http://localhost/Proyecto_Instituto/GestionDocumental_02/xd/proyect/";
+$base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
 $ciudad = "Cayambe";
 $ciudades = ["Cayambe"];
 $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
@@ -41,7 +41,7 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
         <h2><i class="fas fa-user-graduate"></i> Estudiantes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
           <li><a href="<?= $base_url; ?>estudiantes/generar_solicitud/solicitud.php"><i class="fas fa-pen"></i> Formato de prácticas</a></li>
-          <li><a href="<?= $base_url; ?>estudiantes/subir_informe/subir_informe.php"><i class="fas fa-pen"></i>Subir informe </a></li>
+          <li><a href="<?= $base_url; ?>estudiantes/subir_informe/subir_informe.php"><i class="fas fa-pen"></i> Subir informe</a></li>
           <li><i class="fas fa-exclamation-triangle"></i> Reportes</li>
         </ul>
       </div>
@@ -76,9 +76,9 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
       <?php endforeach; ?>
     </select>
     <br>
-        <label for="fecha_inicio">Fecha de inicio:</label>
+        <label for="fecha_inicio">Fecha de inicio prácticas:</label>
         <input type="date" id="fecha_inicio" name="fecha_inicio" required value="<?= htmlspecialchars($fecha_inicio ?? '') ?>">
-        <label for="fecha_fin">Fecha de fin:</label>
+        <label for="fecha_fin">Fecha de fin prácticas:</label>
         <input type="date" id="fecha_fin" name="fecha_fin" required value="<?= htmlspecialchars($fecha_fin ?? '') ?>">
         </div>
         </section>
@@ -107,7 +107,7 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
             <input type="text" name="carrera" placeholder="Carrera" required>
             <input type="text" name="nivel" placeholder='Nivel y Paralelo (1 "A")' required>
             <input type="text" name="contacto" placeholder="Contacto" required>
-            <input type="email" name="correo" placeholder="Correo" required>
+            <input type="email" name="correo" placeholder="Correo Institusional " required>
           </div>
         </section>
 
