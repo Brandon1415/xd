@@ -153,7 +153,7 @@ $tipos_practica = ["Prácticas 1", "Prácticas 2", "Prácticas 3"];
   </div>
 
   <div class="footer">
-    <p>Sistema de Gestión Académica © 2025 - Instituto Superior</p>
+    <p>Sistema de Gestión de Documentos © 2025 - Instituto Superior</p>
   </div>
 
   <script>

@@ -118,7 +118,7 @@ $base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
     <input type="file" name="informe" id="informe" accept=".pdf" required>
   </section>
 
-  <label><strong>Nota:</strong> El nombre del archivo debe tener el formato: <em>GARCIA_TOCAIN_MICHAEL_ENRIQUE.pdf</em></label>
+  <label><strong>Nota:</strong> El nombre del archivo debe tener el formato: <em>APELLIDO1_APELLIDO2_NOMBRE1_NOMBRE2.pdf</em></label>
 
   <div class="form-footer">
     <button type="submit" class="btn btn-primary">Subir Informe</button>

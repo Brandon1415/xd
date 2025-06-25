@@ -1,3 +1,18 @@
+
+<?php
+  ob_start();
+session_start();
+
+
+// // Validar si hay sesión activa, si no redirigir al login
+// if (empty($_SESSION['cedula'])) {
+//     header('Location: login.php');
+//     exit;
+// }
+
+// URL base de la aplicación
+$base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,22 +20,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Director de Unidad - Gestión Académica</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="<?= $base_url ?>style.css">
 </head>
-<?php
-$base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
-?>
-
 <body>
   <header class="header">
     <div class="header-left">
-      <img src="img/INT.png" alt="Logo INT" class="logo" />
+      <img src="<?= $base_url ?>img/INT.png" alt="Logo INT" class="logo" />
       <h1>SISTEMA DE GESTIÓN DE ARCHIVOS - INT</h1>
     </div>
     <div class="header-right">
-      <button class="logout-btn">
+      <a href="<?= $base_url ?>logout.php" class="logout-btn">
         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-      </button>
+      </a>
     </div>
   </header>
 
@@ -29,13 +40,12 @@ $base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
       <div class="menu-section">
         <h2><i class="fas fa-user-graduate"></i> Estudiantes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
-      <li><a href="<?php echo $base_url; ?>estudiantes/generar_solicitud/solicitud.php">
-        <i class="fas fa-pen"></i> Formato de solicitud prácticas</a>
-      </li>
-
-          <li><a href="<?php echo $base_url; ?>./estudiantes/subir_informe/subir_informe.php">
-        <i class="fas fa-pen"></i> Subir informes</a> 
-      </li>
+          <li><a href="<?= $base_url ?>estudiantes/generar_solicitud/solicitud.php">
+            <i class="fas fa-pen"></i> Formato de solicitud prácticas</a>
+          </li>
+          <li><a href="<?= $base_url ?>estudiantes/subir_informe/subir_informe.php">
+            <i class="fas fa-pen"></i> Subir informes</a>
+          </li>
           <li><i class="fas fa-exclamation-triangle"></i> Reportes</li>
         </ul>
       </div>
@@ -43,18 +53,18 @@ $base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
       <div class="menu-section">
         <h2><i class="fas fa-chalkboard-teacher"></i> Docentes <i class="fas fa-chevron-down expand-icon"></i></h2>
         <ul>
-          <li><a href="<?php echo $base_url; ?>Docentes/tutorados.php">
-        <i class="fas fa-pen"></i> Tutorados</a>
-      </li>
-          <li><a href="<?php echo $base_url; ?>Docentes/seguimiento.php">
-        <i class="fas fa-pen"></i>Seguimiento</a>
-      </li>
-          <li><a href="<?php echo $base_url; ?>Docentes/revisar_informes.php">
-        <i class="fas fa-pen"></i> Revisión de Informes </a>
-      </li>
-      <li><a href="<?php echo $base_url; ?>Docentes/notificaciones.php">
-        <i class="fas fa-pen"></i> Enviar Notificaciones</a>
-      </li>
+          <li><a href="<?= $base_url ?>Docentes/tutorados.php">
+            <i class="fas fa-pen"></i> Tutorados</a>
+          </li>
+          <li><a href="<?= $base_url ?>Docentes/seguimiento.php">
+            <i class="fas fa-pen"></i> Seguimiento</a>
+          </li>
+          <li><a href="<?= $base_url ?>Docentes/revisar_informes.php">
+            <i class="fas fa-pen"></i> Revisión de Informes</a>
+          </li>
+          <li><a href="<?= $base_url ?>Docentes/notificaciones.php">
+            <i class="fas fa-pen"></i> Enviar Notificaciones</a>
+          </li>
         </ul>
       </div>
 
@@ -76,7 +86,7 @@ $base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
 
       <div class="dashboard-panel">
         <h2>Panel de Control</h2>
-        <p>Bienvenido al Sistema de Gestión Documental. Seleccione una opción del menú lateral para comenzar.</p>
+        <p>Bienvenido, <strong><?= htmlspecialchars($_SESSION['nombre'] ?? 'Usuario'); ?>!</strong> Seleccione una opción del menú lateral para comenzar.</p>
       </div>
     </div>
   </div>
@@ -97,14 +107,11 @@ $base_url = "http://localhost/Proyecto_Instituto/xd/proyect/";
         });
       });
 
-      document.querySelector('.menu-section').classList.add('active');
-
-      document.querySelector('.logout-btn').addEventListener('click', function () {
-        if (confirm('¿Está seguro que desea cerrar sesión?')) {
-          alert('Sesión cerrada correctamente');
-          // window.location.href = 'login.html';
-        }
-      });
+      // Expande la primera sección por defecto
+      const firstSection = document.querySelector('.menu-section');
+      if (firstSection) {
+        firstSection.classList.add('active');
+      }
     });
   </script>
 </body>
