@@ -1,7 +1,7 @@
 <?php
 $host     = 'localhost';
 $dbname   = 'dbgestdoc2025';
-$user     = 'root';
+$user     = '';
 $pass     = '';
 $charset  = 'utf8mb4';
 
