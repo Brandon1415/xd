@@ -1,3 +1,14 @@
+<!-- <?php
+// session_start();
+
+// if (!isset($_SESSION['cedula'])) {
+//     header("Location: login.php");
+//     exit;
+// }else{
+  
+// }
+
+?> -->
 
 
 <!DOCTYPE html>

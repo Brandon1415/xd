@@ -1,8 +1,11 @@
+<?php
+// listado_tutorados.php
+require_once __DIR__.'/includes/conexion.php';?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Listado de Tutorados - Gestión Académica</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <style>
@@ -164,50 +167,6 @@
         font-size: 24px;
     }
 
-    /* Estadísticas rápidas */
-    .stats-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin-bottom: 30px;
-    }
-
-    .stat-card {
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-        padding: 20px;
-        border-radius: 12px;
-        border-left: 4px solid #dc2626;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        border-left: 4px solid #dc2626;
-        background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
-    }
-
-    .stat-card h3 {
-        font-size: 2rem;
-        color: #dc2626;
-        margin-bottom: 5px;
-        font-weight: 700;
-    }
-
-    .stat-card p {
-        color: #666;
-        font-size: 0.9rem;
-        margin: 0;
-    }
-
-    .stat-card i {
-        float: right;
-        font-size: 2rem;
-        color: #dc2626;
-        opacity: 0.3;
-    }
-
     /* Tabla moderna */
     .table-container {
         background: white;
@@ -249,14 +208,6 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
         font-size: 0.85rem;
-    }
-
-    .table thead th:first-child {
-        border-top-left-radius: 0;
-    }
-
-    .table thead th:last-child {
-        border-top-right-radius: 0;
     }
 
     .table tbody tr {
@@ -306,12 +257,6 @@
         display: inline-flex;
         align-items: center;
         gap: 5px;
-    }
-
-    .estado-proceso {
-        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-        color: #92400e;
-        border: 1px solid #f59e0b;
     }
 
     .estado-pendiente {
@@ -434,10 +379,6 @@
             font-size: 22px;
         }
 
-        .stats-container {
-            grid-template-columns: 1fr;
-        }
-
         .table thead th,
         .table tbody td {
             padding: 12px 16px;
@@ -486,7 +427,6 @@
     }
   </style>
 </head>
-
 <body>
   <header class="header">
     <div class="header-left">
@@ -504,233 +444,92 @@
   </header>
 
   <div class="container">
-    <!-- Contenido principal sin sidebar -->
     <div class="main-content">
       <h2><i class="fas fa-users"></i> Listado de Tutorados</h2>
-      
-      <!-- Estadísticas rápidas -->
-      <div class="stats-container">
-        <div class="stat-card">
-          <i class="fas fa-user-graduate"></i>
-          <h3>3</h3>
-          <p>Total de Estudiantes</p>
-        </div>
-        <div class="stat-card">
-          <i class="fas fa-clock"></i>
-          <h3>1</h3>
-          <p>En Proceso</p>
-        </div>
-        <div class="stat-card">
-          <i class="fas fa-exclamation-triangle"></i>
-          <h3>1</h3>
-          <p>Pendientes</p>
-        </div>
-        <div class="stat-card">
-          <i class="fas fa-check-circle"></i>
-          <h3>1</h3>
-          <p>Finalizados</p>
-        </div>
-      </div>
 
       <div class="table-container">
         <div class="table-responsive">
-          <table class="table table-bordered table-striped">
+          <table class="table">
             <thead class="table-dark">
               <tr>
-                <th><i class="fas fa-user"></i> Nombre del Estudiante</th>
-                <th><i class="fas fa-graduation-cap"></i> Programa</th>
-                <th><i class="fas fa-info-circle"></i> Estado</th>
+                <th><i class="fas fa-id-card"></i> Cédula</th>
+                <th><i class="fas fa-user"></i> Nombre Completo</th>
+                <th><i class="fas fa-graduation-cap"></i> Carrera</th>
+                <th><i class="fas fa-info-circle"></i> Estado Informe</th>
                 <th><i class="fas fa-cogs"></i> Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">
-                      LG
-                    </div>
-                    <div>
-                      <strong>Laura Gómez</strong>
-                      <br>
-                      <small style="color: #666;">ID: EST-2024-001</small>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <strong>Ingeniería en Sistemas</strong>
-                  <br>
-                  <small style="color: #666;">Semestre VIII</small>
-                </td>
-                <td>
-                  <span class="estado-badge estado-proceso">
-                    <i class="fas fa-spinner"></i>
-                    En proceso
-                  </span>
-                </td>
-                <td>
-                  <a href="seguimiento.php?estudiante=Laura%20Gómez" class="btn btn-primary">
-                    <i class="fas fa-chart-line"></i>
-                    Ver Seguimiento
-                  </a>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">
-                      CM
-                    </div>
-                    <div>
-                      <strong>Carlos Méndez</strong>
-                      <br>
-                      <small style="color: #666;">ID: EST-2024-002</small>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <strong>Contaduría</strong>
-                  <br>
-                  <small style="color: #666;">Semestre VI</small>
-                </td>
-                <td>
-                  <span class="estado-badge estado-pendiente">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    Pendiente de informe
-                  </span>
-                </td>
-                <td>
-                  <a href="seguimiento.php?estudiante=Carlos%20Méndez" class="btn btn-primary">
-                    <i class="fas fa-chart-line"></i>
-                    Ver Seguimiento
-                  </a>
-                </td>
-              </tr>
-              
-              <tr>
-                <td>
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">
-                      AP
-                    </div>
-                    <div>
-                      <strong>Andrea Pérez</strong>
-                      <br>
-                      <small style="color: #666;">ID: EST-2024-003</small>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <strong>Diseño Gráfico</strong>
-                  <br>
-                  <small style="color: #666;">Semestre VII</small>
-                </td>
-                <td>
-                  <span class="estado-badge estado-finalizado">
-                    <i class="fas fa-check-circle"></i>
-                    Finalizado
-                  </span>
-                </td>
-                <td>
-                  <a href="seguimiento.php?estudiante=Andrea%20Pérez" class="btn btn-primary">
-                    <i class="fas fa-chart-line"></i>
-                    Ver Seguimiento
-                  </a>
-                </td>
-              </tr>
+              <?php
+              try {
+                $sql = "
+                  SELECT u.cedula, u.nombre, u.apellido, u.carrera,
+                         CASE WHEN i.id IS NULL THEN 0 ELSE 1 END AS tiene_informe
+                  FROM usuarios u
+                  LEFT JOIN informes i ON u.cedula = i.cedula
+                  WHERE u.rol COLLATE utf8mb4_general_ci = 'Estudiante' COLLATE utf8mb4_general_ci
+                  ORDER BY u.apellido, u.nombre
+                ";
+                $stmt = $pdo->query($sql);
+
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                  $iniciales = strtoupper(substr($row['nombre'], 0, 1) . substr($row['apellido'], 0, 1));
+                  $nombreCompleto = htmlspecialchars($row['nombre'] . ' ' . $row['apellido']);
+                  $cedula = htmlspecialchars($row['cedula']);
+                  $carrera = htmlspecialchars($row['carrera']);
+                  $tieneInforme = (int)$row['tiene_informe'];
+
+                  if ($tieneInforme) {
+                    $estadoTexto = 'Informe Subido';
+                    $estadoClase = 'estado-finalizado';
+                    $icon = 'fa-check-circle';
+                  } else {
+                    $estadoTexto = 'Pendiente de Informe';
+                    $estadoClase = 'estado-pendiente';
+                    $icon = 'fa-exclamation-triangle';
+                  }
+
+                  echo "
+                  <tr>
+                    <td>$cedula</td>
+                    <td>
+                      <div style='display: flex; align-items: center; gap: 10px;'>
+                        <div style='width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;'>
+                          $iniciales
+                        </div>
+                        <div>
+                          <strong>$nombreCompleto</strong>
+                        </div>
+                      </div>
+                    </td>
+                    <td><strong>$carrera</strong></td>
+                    <td>
+                      <span class='estado-badge $estadoClase'>
+                        <i class='fas $icon'></i> $estadoTexto
+                      </span>
+                    </td>
+                    <td>
+                      <a href='seguimiento.php?cedula=" . urlencode($cedula) . "' class='btn-primary'>
+                        <i class='fas fa-chart-line'></i> Ver Seguimiento
+                      </a>
+                    </td>
+                  </tr>
+                  ";
+                }
+              } catch (PDOException $e) {
+                echo "<tr><td colspan='5'>Error al obtener datos: " . htmlspecialchars($e->getMessage()) . "</td></tr>";
+              }
+              ?>
             </tbody>
           </table>
         </div>
       </div>
+
     </div>
   </div>
 
-  <div class="footer">
+  <footer class="footer">
     <p>Sistema de Gestión Documental © 2025 - Instituto Superior</p>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Efecto de clic en las filas de la tabla
-      const tableRows = document.querySelectorAll('.table tbody tr');
-      tableRows.forEach(row => {
-        row.addEventListener('click', function(e) {
-          // Solo si no se hizo clic en un botón
-          if (!e.target.closest('.btn-primary')) {
-            const link = this.querySelector('.btn-primary');
-            if (link) {
-              window.location.href = link.href;
-            }
-          }
-        });
-      });
-
-      // Animación de contadores en las estadísticas
-      const counters = document.querySelectorAll('.stat-card h3');
-      counters.forEach(counter => {
-        const target = parseInt(counter.textContent);
-        let current = 0;
-        const increment = target / 20;
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            counter.textContent = target;
-            clearInterval(timer);
-          } else {
-            counter.textContent = Math.ceil(current);
-          }
-        }, 50);
-      });
-
-      // Confirmación de cerrar sesión
-      document.querySelector('.logout-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        if (confirm('¿Está seguro que desea cerrar sesión?')) {
-          window.location.href = this.href;
-        }
-      });
-
-      // Filtro de búsqueda en tiempo real (funcionalidad opcional)
-      function addSearchFunctionality() {
-        const searchInput = document.createElement('input');
-        searchInput.type = 'text';
-        searchInput.placeholder = 'Buscar estudiante...';
-        searchInput.style.cssText = `
-          width: 100%;
-          max-width: 300px;
-          padding: 12px 20px;
-          margin-bottom: 20px;
-          border: 2px solid #e5e7eb;
-          border-radius: 8px;
-          font-size: 16px;
-          background-color: #fafafa;
-          transition: all 0.3s ease;
-        `;
-        
-        const tableContainer = document.querySelector('.table-container');
-        tableContainer.parentNode.insertBefore(searchInput, tableContainer);
-        
-        searchInput.addEventListener('input', function() {
-          const searchTerm = this.value.toLowerCase();
-          const rows = document.querySelectorAll('.table tbody tr');
-          
-          rows.forEach(row => {
-            const studentName = row.querySelector('td strong').textContent.toLowerCase();
-            const program = row.querySelectorAll('td')[1].querySelector('strong').textContent.toLowerCase();
-            
-            if (studentName.includes(searchTerm) || program.includes(searchTerm)) {
-              row.style.display = '';
-            } else {
-              row.style.display = 'none';
-            }
-          });
-        });
-      }
-      
-      // Descomentar la siguiente línea si quieres activar la funcionalidad de búsqueda
-      // addSearchFunctionality();
-    });
-  </script>
+  </footer>
 </body>
 </html>

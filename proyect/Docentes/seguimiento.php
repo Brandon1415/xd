@@ -1,3 +1,37 @@
+<?php
+require_once __DIR__.'/includes/conexion.php';
+
+// Obtener cédula del estudiante desde la URL
+$cedula = $_GET['cedula'] ?? null;
+
+if (!$cedula) {
+    die("Error: No se especificó un estudiante");
+}
+
+try {
+    // Consulta para obtener datos del estudiante
+    $sqlEstudiante = "SELECT nombre, apellido, carrera FROM usuarios WHERE cedula = :cedula";
+    $stmtEstudiante = $pdo->prepare($sqlEstudiante);
+    $stmtEstudiante->execute([':cedula' => $cedula]);
+    $estudiante = $stmtEstudiante->fetch(PDO::FETCH_ASSOC);
+
+    if (!$estudiante) {
+        die("Error: Estudiante no encontrado");
+    }
+
+    // Consulta para obtener el seguimiento
+    $sqlSeguimiento = "SELECT fecha, actividad, comentario, estado 
+                       FROM seguimientos 
+                       WHERE cedula_estudiante = :cedula 
+                       ORDER BY fecha DESC";
+    $stmtSeguimiento = $pdo->prepare($sqlSeguimiento);
+    $stmtSeguimiento->execute([':cedula' => $cedula]);
+    $seguimientos = $stmtSeguimiento->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    die("Error al obtener datos: " . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -372,8 +406,13 @@
   <div class="main-content">
     <h2 class="page-title">
       <i class="fas fa-chart-line"></i>
-      Seguimiento de Estudiante
+      Seguimiento de <?= htmlspecialchars($estudiante['nombre'] . ' ' . $estudiante['apellido']) ?>
     </h2>
+
+    <div style="margin-bottom: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <p><strong>Cédula:</strong> <?= htmlspecialchars($cedula) ?></p>
+      <p><strong>Carrera:</strong> <?= htmlspecialchars($estudiante['carrera']) ?></p>
+    </div>
 
     <div class="table-container">
       <table class="table">
@@ -381,35 +420,40 @@
           <tr>
             <th><i class="fas fa-calendar-alt"></i> Fecha</th>
             <th><i class="fas fa-tasks"></i> Actividad</th>
-            <th class="fas fa-comment"></i> Comentario</th>
+            <th><i class="fas fa-comment"></i> Comentario</th>
             <th><i class="fas fa-flag"></i> Estado</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2025-03-01</td>
-            <td>Entrega de plan</td>
-            <td>Bien estructurado</td>
-            <td><span class="estado-aprobado">Aprobado</span></td>
-          </tr>
-          <tr>
-            <td>2025-04-10</td>
-            <td>Entrega de informe parcial</td>
-            <td>Faltan evidencias</td>
-            <td><span class="estado-observado">Observado</span></td>
-          </tr>
-          <tr>
-            <td>2025-04-25</td>
-            <td>Informe final</td>
-            <td>En revisión</td>
-            <td><span class="estado-pendiente">Pendiente</span></td>
-          </tr>
-          <tr>
-            <td>2025-05-15</td>
-            <td>Presentación oral</td>
-            <td>Programada para próxima semana</td>
-            <td><span class="estado-pendiente">Pendiente</span></td>
-          </tr>
+          <?php if (count($seguimientos) > 0): ?>
+            <?php foreach ($seguimientos as $seguimiento): ?>
+              <tr>
+                <td><?= htmlspecialchars($seguimiento['fecha']) ?></td>
+                <td><?= htmlspecialchars($seguimiento['actividad']) ?></td>
+                <td><?= htmlspecialchars($seguimiento['comentario']) ?></td>
+                <td>
+                  <?php 
+                  $claseEstado = '';
+                  switch ($seguimiento['estado']) {
+                      case 'Aprobado':
+                          $claseEstado = 'estado-aprobado';
+                          break;
+                      case 'Observado':
+                          $claseEstado = 'estado-observado';
+                          break;
+                      default:
+                          $claseEstado = 'estado-pendiente';
+                  }
+                  ?>
+                  <span class="<?= $claseEstado ?>"><?= htmlspecialchars($seguimiento['estado']) ?></span>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="4" style="text-align: center;">No hay registros de seguimiento para este estudiante</td>
+            </tr>
+          <?php endif; ?>
         </tbody>
       </table>
     </div>

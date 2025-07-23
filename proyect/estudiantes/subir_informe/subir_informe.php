@@ -499,49 +499,49 @@
       const archivoError = document.getElementById('archivoError');
       
       // Validación de cédula ecuatoriana
-      function validarCedulaEcuatoriana(cedula) {
-        if (cedula.length !== 10) return false;
+      // function validarCedulaEcuatoriana(cedula) {
+      //   if (cedula.length !== 10) return false;
         
-        const digitos = cedula.split('').map(Number);
-        const provincia = parseInt(cedula.substring(0, 2));
+      //   const digitos = cedula.split('').map(Number);
+      //   const provincia = parseInt(cedula.substring(0, 2));
         
-        if (provincia < 1 || provincia > 24) return false;
+      //   if (provincia < 1 || provincia > 24) return false;
         
-        let suma = 0;
-        for (let i = 0; i < 9; i++) {
-          let digito = digitos[i];
-          if (i % 2 === 0) {
-            digito *= 2;
-            if (digito > 9) digito -= 9;
-          }
-          suma += digito;
-        }
+      //   let suma = 0;
+      //   for (let i = 0; i < 9; i++) {
+      //     let digito = digitos[i];
+      //     if (i % 2 === 0) {
+      //       digito *= 2;
+      //       if (digito > 9) digito -= 9;
+      //     }
+      //     suma += digito;
+      //   }
         
-        const digitoVerificador = (Math.ceil(suma / 10) * 10) - suma;
-        return digitoVerificador === digitos[9] || (digitoVerificador === 10 && digitos[9] === 0);
-      }
+      //   const digitoVerificador = (Math.ceil(suma / 10) * 10) - suma;
+      //   return digitoVerificador === digitos[9] || (digitoVerificador === 10 && digitos[9] === 0);
+      // }
       
       // Validación en tiempo real de la cédula
-      cedulaInput.addEventListener('input', function() {
-        const cedula = this.value.replace(/\D/g, ''); // Solo números
-        this.value = cedula;
+      // cedulaInput.addEventListener('input', function() {
+      //   const cedula = this.value.replace(/\D/g, ''); // Solo números
+      //   this.value = cedula;
         
-        if (cedula.length === 10) {
-          if (validarCedulaEcuatoriana(cedula)) {
-            this.classList.remove('error');
-            this.classList.add('success');
-            cedulaError.style.display = 'none';
-          } else {
-            this.classList.add('error');
-            this.classList.remove('success');
-            cedulaError.textContent = 'La cédula ingresada no es válida';
-            cedulaError.style.display = 'flex';
-          }
-        } else {
-          this.classList.remove('error', 'success');
-          cedulaError.style.display = 'none';
-        }
-      });
+      //   if (cedula.length === 10) {
+      //     if (validarCedulaEcuatoriana(cedula)) {
+      //       this.classList.remove('error');
+      //       this.classList.add('success');
+      //       cedulaError.style.display = 'none';
+      //     } else {
+      //       this.classList.add('error');
+      //       this.classList.remove('success');
+      //       cedulaError.textContent = 'La cédula ingresada no es válida';
+      //       cedulaError.style.display = 'flex';
+      //     }
+      //   } else {
+      //     this.classList.remove('error', 'success');
+      //     cedulaError.style.display = 'none';
+      //   }
+      // });
       
       // Validación del archivo
       archivoInput.addEventListener('change', function() {

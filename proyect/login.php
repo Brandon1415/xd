@@ -1,131 +1,99 @@
 <?php
 session_start();
-
-// Parámetros de conexión
-$host     = 'localhost';
-$dbname   = 'dbgestdoc2025';
-$user     = 'root';
-$pass     = '';
-$dsn      = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
-$options  = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
+require_once 'Docentes/includes/conexion.php'; // Asegúrate de tener aquí tu conexión PDO como $pdo
 
 $error = '';
-$cedula = '';
-$password = '';
 
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-    die("Error de conexión: " . $e->getMessage());
-}
-
-// Si se envió el formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Recoge las credenciales
-    $cedula   = trim($_POST['cedula'] ?? '');
+    $cedula = trim($_POST['cedula'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    if ($cedula === '' || $password === '') {
-        $error = "Debes indicar cédula y contraseña.";
-    } else {
-        $stmt = $pdo->prepare("
-            SELECT cedula, password
-              FROM usuarios
-             WHERE cedula = :cedula
-             LIMIT 1
-        ");
-        $stmt->execute([':cedula' => $cedula]);
-        $user = $stmt->fetch();
+    if ($cedula && $password) {
+        $stmt = $pdo->prepare("SELECT cedula, password, rol FROM usuarios WHERE cedula = :cedula LIMIT 1");
+        $stmt->bindParam(':cedula', $cedula);
+        $stmt->execute();
 
-        // Verifica usuario y contraseña
-        if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['cedula'] = $user['cedula'];
-            header('Location: index.php');
-            exit;
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario && password_verify($password, $usuario['password'])) {
+            // Inicio de sesión exitoso
+            $_SESSION['cedula'] = $usuario['cedula'];
+            $_SESSION['rol'] = $usuario['rol'];
+
+            // Redirige según el rol
+            switch ($usuario['rol']) {
+                case 'director':
+                    header('Location: director/index.php');
+                    exit;
+                case 'docente':
+                    header('Location: docente/index.php');
+                    exit;
+                case 'estudiante':
+                    header('Location: estudiante/index.php');
+                    exit;
+                default:
+                    header('Location: index.php');
+                    exit;
+            }
         } else {
-            $error = "Cédula o contraseña incorrectas.";
+            $error = 'Credenciales incorrectas.';
         }
+    } else {
+        $error = 'Por favor, complete todos los campos.';
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Login de Usuarios</title>
-  <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .login-box {
-      background: #222;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px red;
-    }
-    h1 {
-      text-align: center;
-      color: red;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      background: #333;
-      border: 1px solid red;
-      color: white;
-      border-radius: 5px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px;
-      width: 100%;
-      background: red;
-      border: none;
-      color: white;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .error {
-      color: red;
-      margin-top: 10px;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            padding: 12px;
+            width: 100%;
+            background: #dc2626;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-  <div class="login-box">
-    <h1>Iniciar sesión</h1>
 
+<form method="POST">
+    <h2>Iniciar sesión</h2>
+    <input type="text" name="cedula" placeholder="Cédula" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <input type="submit" value="Entrar">
     <?php if (!empty($error)): ?>
-      <div class="error"><?php echo htmlspecialchars($error); ?></div>
+        <div class="error"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
+</form>
 
-    <form action="login.php" method="post">
-      <label for="cedula">Cédula:</label>
-      <input type="text" name="cedula" id="cedula"
-             value="<?php echo htmlspecialchars($cedula); ?>" required>
-
-      <label for="password">Contraseña:</label>
-      <input type="password" name="password" id="password" required>
-
-      <button type="submit">Entrar</button>
-    </form>
-  </div>
 </body>
 </html>

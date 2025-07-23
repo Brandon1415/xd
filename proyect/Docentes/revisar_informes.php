@@ -1,3 +1,29 @@
+<?php
+require_once __DIR__.'/includes/conexion.php';
+session_start();
+
+// Verificar si el usuario es docente
+// if ($_SESSION['rol'] !== 'Docente') {
+//     header('Location: ../index.php');
+//     exit;
+// }
+
+try {
+    // Consulta para obtener los informes con datos del estudiante
+    $sql = "SELECT i.id, i.cedula, u.nombre, u.apellido, u.carrera,
+                   i.nombre_archivo, i.fecha_subida, i.estado, i.observaciones
+            FROM informes i
+            JOIN usuarios u ON i.cedula = u.cedula
+            ORDER BY i.estado ASC, i.fecha_subida DESC";
+    
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $informes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    die("Error al obtener los informes: " . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -377,6 +403,32 @@
         background-color: #fee2e2;
         color: #991b1b;
     }
+
+    /* Agregamos estilos para los estados */
+    .estado-pendiente {
+        background-color: #fef3c7;
+        color: #92400e;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .estado-aprobado {
+        background-color: #d1fae5;
+        color: #065f46;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .estado-rechazado {
+        background-color: #fee2e2;
+        color: #991b1b;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -384,7 +436,9 @@
     <div class="header-left">
       <img src="../img/INT.png" alt="Logo INT" class="logo" />
     </div>
+    
     <h1 class="titulo-centro">SISTEMA DE GESTIÓN DE ARCHIVOS - INT</h1>
+    
     <div class="header-right">
       <button onclick="goBack()" class="back-btn">
         <i class="fas fa-arrow-left"></i> Regresar
@@ -405,103 +459,57 @@
         <thead>
           <tr>
             <th><i class="fas fa-user"></i> Estudiante</th>
-            <th><i class="fas fa-file-text"></i> Tipo de Informe</th>
-            <th><i class="fas fa-calendar"></i> Fecha de Entrega</th>
-            <th><i class="fas fa-download"></i> Archivo</th>
+            <th><i class="fas fa-graduation-cap"></i> Carrera</th>
+            <th><i class="fas fa-file-text"></i> Archivo</th>
+            <th><i class="fas fa-calendar"></i> Fecha</th>
+            <th><i class="fas fa-info-circle"></i> Estado</th>
+            <th><i class="fas fa-download"></i> Descargar</th>
             <th><i class="fas fa-cogs"></i> Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>Laura Gómez</strong></td>
-            <td>Informe Parcial</td>
-            <td>2025-04-10</td>
-            <td>
-              <a href="uploads/informe_parcial_laura.pdf" class="btn btn-primary" download>
-                <i class="fas fa-download"></i> Descargar
-              </a>
-            </td>
-            <td>
-              <button class="btn btn-success" onclick="aprobarInforme('Laura Gómez')">
-                <i class="fas fa-check"></i> Aprobar
-              </button>
-              <button class="btn btn-warning" onclick="observarInforme('Laura Gómez')">
-                <i class="fas fa-eye"></i> Observar
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Carlos Méndez</strong></td>
-            <td>Informe Final</td>
-            <td>2025-05-01</td>
-            <td>
-              <a href="uploads/final_carlos.pdf" class="btn btn-primary" download>
-                <i class="fas fa-download"></i> Descargar
-              </a>
-            </td>
-            <td>
-              <button class="btn btn-success" onclick="aprobarInforme('Carlos Méndez')">
-                <i class="fas fa-check"></i> Aprobar
-              </button>
-              <button class="btn btn-warning" onclick="observarInforme('Carlos Méndez')">
-                <i class="fas fa-eye"></i> Observar
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Andrea Pérez</strong></td>
-            <td>Plan de Práctica</td>
-            <td>2025-03-20</td>
-            <td>
-              <a href="uploads/plan_andrea.pdf" class="btn btn-primary" download>
-                <i class="fas fa-download"></i> Descargar
-              </a>
-            </td>
-            <td>
-              <button class="btn btn-success" onclick="aprobarInforme('Andrea Pérez')">
-                <i class="fas fa-check"></i> Aprobar
-              </button>
-              <button class="btn btn-warning" onclick="observarInforme('Andrea Pérez')">
-                <i class="fas fa-eye"></i> Observar
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Miguel Torres</strong></td>
-            <td>Informe Mensual</td>
-            <td>2025-04-15</td>
-            <td>
-              <a href="uploads/mensual_miguel.pdf" class="btn btn-primary" download>
-                <i class="fas fa-download"></i> Descargar
-              </a>
-            </td>
-            <td>
-              <button class="btn btn-success" onclick="aprobarInforme('Miguel Torres')">
-                <i class="fas fa-check"></i> Aprobar
-              </button>
-              <button class="btn btn-warning" onclick="observarInforme('Miguel Torres')">
-                <i class="fas fa-eye"></i> Observar
-              </button>
-            </td>
-          </tr>
-          <tr>
-            <td><strong>Sofía Ramírez</strong></td>
-            <td>Informe Final</td>
-            <td>2025-05-10</td>
-            <td>
-              <a href="uploads/final_sofia.pdf" class="btn btn-primary" download>
-                <i class="fas fa-download"></i> Descargar
-              </a>
-            </td>
-            <td>
-              <button class="btn btn-success" onclick="aprobarInforme('Sofía Ramírez')">
-                <i class="fas fa-check"></i> Aprobar
-              </button>
-              <button class="btn btn-warning" onclick="observarInforme('Sofía Ramírez')">
-                <i class="fas fa-eye"></i> Observar
-              </button>
-            </td>
-          </tr>
+          <?php if (count($informes) > 0): ?>
+            <?php foreach ($informes as $informe): ?>
+              <tr>
+                <td>
+                  <strong><?= htmlspecialchars($informe['nombre'] . ' ' . htmlspecialchars($informe['apellido'])) ?></strong>
+                  <br><small><?= htmlspecialchars($informe['cedula']) ?></small>
+                </td>
+                <td><?= htmlspecialchars($informe['carrera']) ?></td>
+                <td><?= htmlspecialchars($informe['nombre_archivo']) ?></td>
+                <td><?= date('d/m/Y H:i', strtotime($informe['fecha_subida'])) ?></td>
+                <td>
+                  <span class="estado-<?= strtolower($informe['estado']) ?>">
+                    <?= htmlspecialchars($informe['estado']) ?>
+                  </span>
+                </td>
+                <td>
+                  <a href="descargar_informe.php?id=<?= $informe['id'] ?>" 
+                     class="btn btn-primary">
+                    <i class="fas fa-download"></i> Descargar
+                  </a>
+                </td>
+                <td>
+                  <?php if ($informe['estado'] === 'Pendiente'): ?>
+                    <button class="btn btn-success" 
+        onclick="aprobarInforme(<?= $informe['id'] ?>, '<?= htmlspecialchars($informe['nombre'] . ' ' . $informe['apellido']) ?>')">
+  <i class="fas fa-check"></i> Aprobar
+</button>
+<button class="btn btn-warning" 
+        onclick="observarInforme(<?= $informe['id'] ?>, '<?= htmlspecialchars($informe['nombre'] . ' ' . $informe['apellido']) ?>')">
+  <i class="fas fa-eye"></i> Observar
+</button>
+                  <?php else: ?>
+                    <small><?= htmlspecialchars($informe['observaciones'] ?? 'Sin observaciones') ?></small>
+                  <?php endif; ?>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <tr>
+              <td colspan="7" style="text-align: center;">No hay informes subidos</td>
+            </tr>
+          <?php endif; ?>
         </tbody>
       </table>
     </div>
@@ -512,61 +520,70 @@
   </div>
 
   <script>
-    // Función para aprobar informe
-    function aprobarInforme(estudiante) {
+    // Función para aprobar informe con AJAX
+    function aprobarInforme(id, estudiante) {
       if (confirm(`¿Está seguro de aprobar el informe de ${estudiante}?`)) {
-        // Aquí iría la lógica para aprobar el informe
-        alert(`Informe de ${estudiante} aprobado exitosamente.`);
-        
-        // Cambiar el estado visual del botón
-        event.target.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-        event.target.innerHTML = '<i class="fas fa-check-circle"></i> Aprobado';
-        event.target.disabled = true;
+        fetch(`procesar_revision.php`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: `id=${id}&accion=aprobar`
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert(`Informe de ${estudiante} aprobado exitosamente.`);
+            location.reload();
+          } else {
+            alert(`Error: ${data.message}`);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Ocurrió un error al procesar la solicitud');
+        });
       }
     }
 
-    // Función para observar informe
-    function observarInforme(estudiante) {
+    // Función para observar/rechazar informe con AJAX
+    function observarInforme(id, estudiante) {
       const observacion = prompt(`Ingrese sus observaciones para el informe de ${estudiante}:`);
       if (observacion && observacion.trim() !== '') {
-        // Aquí iría la lógica para enviar las observaciones
-        alert(`Observaciones enviadas a ${estudiante}: ${observacion}`);
-        
-        // Cambiar el estado visual del botón
-        event.target.style.background = 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)';
-        event.target.innerHTML = '<i class="fas fa-comment"></i> Observado';
+        fetch(`procesar_revision.php`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: `id=${id}&accion=rechazar&observacion=${encodeURIComponent(observacion)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert(`Observaciones enviadas a ${estudiante}`);
+            location.reload();
+          } else {
+            alert(`Error: ${data.message}`);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Ocurrió un error al procesar la solicitud');
+        });
       }
     }
 
-    // Función para el botón regresar - más inteligente
+    // Función para el botón regresar
     function goBack() {
-      // Verificar si hay historial disponible
       if (window.history.length > 1) {
-        // Si hay historial, regresar a la página anterior
         window.history.back();
       } else {
-        // Si no hay historial (página abierta directamente), ir al index
-        window.location.href = '../index.html';
+        window.location.href = '../index.php';
       }
     }
-
-    // Función alternativa con confirmación (opcional)
-    function goBackWithConfirm() {
-      if (confirm('¿Está seguro de que desea salir de esta página?')) {
-        goBack();
-      }
-    }
-
-    // Soporte para navegación con teclado (ESC para regresar)
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        goBack();
-      }
-    });
 
     // Efectos de animación al cargar la página
     document.addEventListener('DOMContentLoaded', function() {
-      // Animar filas de la tabla
       const rows = document.querySelectorAll('.custom-table tbody tr');
       rows.forEach((row, index) => {
         row.style.opacity = '0';
@@ -577,20 +594,6 @@
           row.style.opacity = '1';
           row.style.transform = 'translateY(0)';
         }, index * 100);
-      });
-
-      // Efecto de hover mejorado para botones
-      const buttons = document.querySelectorAll('.btn');
-      buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-2px) scale(1.05)';
-        });
-        
-        button.addEventListener('mouseleave', function() {
-          if (!this.disabled) {
-            this.style.transform = 'translateY(0) scale(1)';
-          }
-        });
       });
     });
   </script>
