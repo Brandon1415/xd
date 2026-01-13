@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>form</title>
+  <link rel="stylesheet" href=style.css>
+</head>
+
+<body>
+  <table class="main-table">
+    <tr class="tr-only-bottom">
+      <td class="logo-cell" rowspan="2">
+        <img src=img/logo.png alt="INEC" width="160">
+      </td>
+      <td colspan="2" class="center-title" style="border-bottom:none; padding-top:36px;">
+        ENCUESTA DE EDIFICACIONES 2021<br>
+        (PERMISOS DE CONSTRUCCIÓN)
+      </td>
+
+      <td class="right-top" rowspan="2" style="width:200px;">
+        Formulario Gratuito
+        <div class="right-small">Nota: Antes de llenar este formulario, sírvase leer detenidamente las instrucciones
+          impresas al final de este.</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="hdr-gap" colspan="2" aria-hidden="true"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="no-border"></td>
+    </tr>
+    <tr class="notice-row">
+      <td class="notice-cell">
+        IMPORTANTE
+        <img class="arrow" src=img/felcha.png alt="→">
+      </td>
+      <td class="notice-text" colspan="3">
+        Por favor, entregue de manera obligatoria este formulario completamente lleno, junto a los demás documentos
+        habilitantes en la oficina municipal donde solicita su permiso de construcción, para proceder con la aprobación
+        del mismo. Se solicita a los municipios hacer cumplir esta disposición, tanto a los particulares como a las
+        entidades públicas, sean o no exentas del pago del impuesto municipal.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" class="art-row">
+        Estimado informante, los datos registrados en este formulario son de vital importancia para mantener
+        estadísticas actualizadas sobre el potencial crecimiento de la actividad constructora en el país, sirven de base
+        para la planificación y el desarrollo del sector. Agradecemos su valiosa colaboración para la consecución de
+        este objetivo.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4" class="art-row">
+        <span class="art-bold">Art. 21 de la Ley de Estadística:</span>
+        "Los datos individuales que se obtengan para efecto de estadística y censos son de carácter reservado; en
+        consecuencia, no podrán darse a conocer informaciones individuales de ninguna especie, ni podrán ser utilizados
+        para otros fines como de tributación o conscripción, investigaciones judiciales y, en general, para cualquier
+        objeto distinto del propiamente estadístico o censal (...)".
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="br bh p6 hdr" style="width:78%;">I. Ubicación e identificación de la edificación</td>
+      <td class="bh p6 hdr" style="width:22%; text-align:center;">PARA USO DEL INEC</td>
+    </tr>
+    <tr>
+      <td class="br" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col span="12" />
+          </colgroup>
+          <tr>
+            <td class="b p10 rowH" colspan="4">
+              <span class="code">1001</span>
+              <span class="label">Provincia</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="5">
+              <span class="code">1002</span>
+              <span class="label">Calle principal</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="3">
+              <span class="code">1003</span>
+              <span class="label">N° clave catastral</span>
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td class="b p10 rowH" colspan="4">
+              <span class="code">1004</span>
+              <span class="label">Cantón</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="5">
+              <span class="code">1005</span>
+              <span class="label">Intersección</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="3">
+              <span class="code">1006</span>
+              <span class="label">N° de predio</span>
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td class="b p10 rowH" colspan="4">
+              <span class="code">1007</span>
+              <span class="label">Parroquia</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="5">
+              <span class="code">1008</span>
+              <span class="label">Urbanización o ciudadela</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="3">
+              <span class="code">1009</span>
+              <span class="label">La edificación es obra</span>
+              <span class="choices">
+                <label><input type="radio" name="obra" /> 1009.1 Privada</label>
+                <label><input type="radio" name="obra" /> 1009.2 Pública</label>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="b p10 rowH" colspan="6">
+              <span class="code">1011</span>
+              <span class="label">Nombre del propietario (Persona natural o jurídica, o entidad pública)</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="6">
+              <span class="code">1012</span>
+              <span class="label">Nombre del proyectista (Persona natural o jurídica, o entidad pública)</span>
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td class="b p10 rowH" colspan="6">
+              <span class="code">1011.1</span>
+              <span class="label">Cédula / RUC (Propietario)</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH" colspan="6">
+              <span class="code">1012.1</span>
+              <span class="label">Cédula / RUC (Proyectista)</span>
+              <input type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td class="b p10 rowH2" colspan="9">
+              <span class="code">1013</span>
+              <span class="label">Indique las coordenadas de georreferenciación <br> de la edificación en formato UTM
+                (Universal Transversal de Mercator)</span>
+              <span class="inline">X: <input type="text" /> Y: <input type="text" /> H: <input type="text" /></span>
+            </td>
+            <td class="b p10 rowH2" colspan="3">
+              <span class="code">1015</span>
+              <span class="label">¿El proyectista cuenta con un <br>documento habilitante <br>para el ejercicio de su
+                profesión?</span>
+              <span class="choices">
+                <label><input type="radio" name="hab" /> 1015.1 Sí</label>
+                <label><input type="radio" name="hab" /> 1015.2 No</label>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="b p10 rowH3" colspan="9">
+              <span class="code">1014</span>
+              <span class="label">Indique a qué distancia se ubica el espacio verde municipal o público más cercano al
+                lugar donde se levantará la edificación (en metros lineales)</span>
+              <input type="text" />
+            </td>
+            <td class="b p10 rowH3" colspan="3"></td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:0;">
+        <table class="rtable">
+          <tr>
+            <td class="rrow" colspan="2"></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel" style="width:55%;">Provincia</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">Cantón</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">Parroquia</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">Mes</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">N° de boleta</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr>
+            <td class="rlabel" colspan="2" style="font-weight:700;">Fecha de presentación de la solicitud al municipio
+            </td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">Día</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">Mes</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+          <tr class="rrow">
+            <td class="rlabel">Año</td>
+            <td class="rlabel"><input type="text" class="small" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer2">
+    <tr>
+      <td class="bh p6 hdr">II. TIPO DE OBRA (Marque con una "X" la casilla correspondiente)</td>
+    </tr>
+    <tr>
+      <td class="b notes">
+         Nueva construcción: Es aquella obra de ingeniería que se construirá desde los cimientos.<br>
+         La ampliación hacia arriba: es cuando sobre la obra ya existente se levanta otro u otros pisos.<br>
+         La ampliación horizontal: se considera cuando entre la parte existente y la nueva, al mismo nivel, hay
+        comunicación interior; caso contrario, se considera como nueva construcción adosada.<br>
+         Las reconstrucciones son: obras que no afectan a los cimientos ni a la estructura. Si se derroca una
+        construcción y se levanta otra edificación, esta es nueva construcción.
+      </td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <tr>
+            <td class="b opt rowH" style="width:25%;">
+              <label>Nueva construcción</label>
+              <input class="circle" type="radio" name="tipo_obra">
+              <span class="code">2001</span>
+            </td>
+            <td class="b opt rowH" style="width:25%;">
+              <label>Ampliación hacia arriba (Favor leer instrucción)</label>
+              <input class="circle" type="radio" name="tipo_obra">
+              <span class="code">2002</span>
+            </td>
+            <td class="b opt rowH" style="width:25%;">
+              <label>Reconstrucción (paredes, cubierta, pisos)</label>
+              <input class="circle" type="radio" name="tipo_obra">
+              <span class="code">2003</span>
+            </td>
+            <td class="b opt rowH" style="width:25%;">
+              <label>Ampliación horizontal (Favor leer instrucción)</label>
+              <input class="circle" type="radio" name="tipo_obra">
+              <span class="code">2004</span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="bh p6 hdr">III. DATOS DEL TERRENO y ÁREAS A CONSTRUIRSE (En metros cuadrados, omita centímetros)</td>
+    </tr>
+    <tr>
+      <td class="b notes">
+         Si la edificación es nueva construcción debe proporcionar toda la información a excepción de la variable del
+        área previamente construida (casilla 3003).<br>
+         Si la edificación es ampliación horizontal debe proporcionar toda la información.<br>
+         Si la ampliación es hacia arriba debe informarse las siguientes variables: el área total nueva a construirse
+        (casilla 3002) y el área previamente construida (casilla 3003), omita la información de superficie del terreno
+        (casilla 3001), de espacios verdes (casilla 3005) y de planta baja (casilla 3004).<br>
+         Si se trata de una reconstrucción debe informarse únicamente donde correspondan las áreas reconstruidas
+        (casilla 3002).
+      </td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:50%;">
+            <col style="width:47%;">
+            <col style="width:3%;">
+          </colgroup>
+          <tr>
+            <td class="b p10" valign="top">
+              <table class="inner">
+                <tr>
+                  <td style="width:90%;">Superficie total del terreno</td>
+                  <td style="width:10%; text-align:right;">3001</td>
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="text" /></td>
+                </tr>
+              </table>
+            </td>
+            <td class="" valign="top">
+              Área a construirse en planta baja
+              <input type="text" />
+            <td class="" valign="top" style="text-align:right;">3004</td>
+      </td>
+    </tr>
+    <tr>
+      <td class="b p10" valign="top">
+        <table class="inner">
+          <tr>
+            <td style="width:90%;">Área total a construirse</td>
+            <td style="width:10%; text-align:right;">3002</td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="text" /></td>
+          </tr>
+        </table>
+      </td>
+      <td class="" valign="top">
+        Área para espacios verdes y/o patio(s)
+        <input type="text" />
+      </td>
+      <td class="" valign="top" style="text-align:right;">3006</td>
+    </tr>
+    <tr>
+      <td class="b p10" valign="top">
+        <table class="inner">
+          <tr>
+            <td style="width:90%;">Área previamente construida (Solo para los casos de ampliaciones)</td>
+            <td style="width:10%; text-align:right;">3003</td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="text" /></td>
+          </tr>
+        </table>
+      </td>
+      <td class="b p10 grey" colspan="2" valign="top">
+      </td>
+    </tr>
+  </table>
+  </td>
+  </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="bh p6 hdr">IV. MATERIALES PREDOMINANTES A SER UTILIZADOS EN LA EDIFICACIÓN</td>
+    </tr>
+    <tr>
+      <td class="b p6">(Marque con una "X" la casilla correspondiente al material predominante en cada fase de la
+        edificación, marque una sola casilla en cada caso)</td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+            <col style="width:20%;">
+          </colgroup>
+          <tr>
+            <td class="b p8 split"><b>A. CIMENTOS</b></td>
+            <td class="b p8 split"><b>B. PISOS</b></td>
+            <td class="b p8 split"><b>C. ESTRUCTURA</b></td>
+            <td class="b p8 split"><b>D. PAREDES</b></td>
+            <td class="b p8"><b>E. CUBIERTA O TECHO</b></td>
+          </tr>
+          <tr>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="a">Hormigón armado</label></td>
+                  <td class="opt-right">4001</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Tierra estabilizada</label></td>
+                  <td class="opt-right">4007</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="c">Hormigón armado</label></td>
+                  <td class="opt-right">4014</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Ladrillo</label></td>
+                  <td class="opt-right">4019</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="e">Hormigón armado</label></td>
+                  <td class="opt-right">4028</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="a">Hormigón ciclópeo</label></td>
+                  <td class="opt-right">4002</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Hormigón</label></td>
+                  <td class="opt-right">4008</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="c">Metálica</label></td>
+                  <td class="opt-right">4015</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Bloque</label></td>
+                  <td class="opt-right">4020</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="e">Fibrocemento (ej.: eternit, ardex)</label>
+                  </td>
+                  <td class="opt-right">4029</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="a">Sobre pilotes de madera</label></td>
+                  <td class="opt-right">4003</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Madera</label></td>
+                  <td class="opt-right">4009</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="c">Madera</label></td>
+                  <td class="opt-right">4016</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Madera</label></td>
+                  <td class="opt-right">4021</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="e">Arcilla (teja)</label></td>
+                  <td class="opt-right">4030</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="a">Sobre pilotes de hormigón</label></td>
+                  <td class="opt-right">4004</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Cerámica</label></td>
+                  <td class="opt-right">4010</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="c">Muros portantes</label></td>
+                  <td class="opt-right">4017</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Adobe o tapia</label></td>
+                  <td class="opt-right">4022</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="e">Láminas metálicas (zinc)</label></td>
+                  <td class="opt-right">4031</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="a">Cimiento portantes</label></td>
+                  <td class="opt-right">4005</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Porcelanato</label></td>
+                  <td class="opt-right">4011</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="c">Otros (especifique)</label></td>
+                  <td class="opt-right">4018</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Caña revestida o bareque</label></td>
+                  <td class="opt-right">4023</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="e">Policarbonato</label></td>
+                  <td class="opt-right">4032</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="a">Otros (especifique)</label></td>
+                  <td class="opt-right">4006</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Piso laminado (piso flotante)</label></td>
+                  <td class="opt-right">4012</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split empty"></td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Prefabricadas</label></td>
+                  <td class="opt-right">4024</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="e">Otros (especifique)</label></td>
+                  <td class="opt-right">4033</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b split empty"></td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="b">Otros (especifique)</label></td>
+                  <td class="opt-right">4013</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b split empty"></td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Paredes portantes</label></td>
+                  <td class="opt-right">4025</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b empty"></td>
+          </tr>
+          <tr>
+            <td class="b split empty"></td>
+            <td class="b split empty"></td>
+            <td class="b split empty"></td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Lámina de yeso - cartón</label></td>
+                  <td class="opt-right">4026</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b empty"></td>
+          </tr>
+          <tr>
+            <td class="b split empty"></td>
+            <td class="b split empty"></td>
+            <td class="b split empty"></td>
+            <td class="b split p8">
+              <table class="opt">
+                <tr>
+                  <td class="opt-left"><label><input type="radio" name="d">Otros (especifique)</label></td>
+                  <td class="opt-right">4027</td>
+                </tr>
+              </table>
+            </td>
+            <td class="b empty"></td>
+          </tr>
+          <tr>
+            <td class="b p8" colspan="5" style="border-top:2px solid #000;">
+              <table style="width:100%; table-layout:fixed;">
+                <tr>
+                  <td colspan="4" class="p6"><b>Tipo de acabados internos</b> (Marque con una X, según corresponda)</td>
+                </tr>
+                <tr>
+                  <td class="b p8" style="width:25%;">
+                    <table class="opt">
+                      <tr>
+                        <td class="opt-left"><label><input type="radio" name="acab">1 Acabados de primera</label></td>
+                        <td class="opt-right">4034</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="b p8" style="width:25%;">
+                    <table class="opt">
+                      <tr>
+                        <td class="opt-left"><label><input type="radio" name="acab">2 Acabados de segunda</label></td>
+                        <td class="opt-right">4035</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="b p8" style="width:25%;">
+                    <table class="opt">
+                      <tr>
+                        <td class="opt-left"><label><input type="radio" name="acab">3 Acabados de tercera</label></td>
+                        <td class="opt-right">4036</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td class="b grey" style="width:25%;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="bh p6 hdr">V. USO, CARACTERÍSTICAS Y FINANCIAMIENTO DE LA EDIFICACIÓN</td>
+    </tr>
+    <tr>
+      <td class="b p6 sub">1. Alcance de la tecnología</td>
+    </tr>
+    <tr>
+      <td class="b p6">Marque con una X, según corresponda.</td>
+    </tr>
+    <tr>
+      <td class="b p8" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:50%;">
+            <col style="width:50%;">
+          </colgroup>
+          <tr>
+            <td class="box p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell" colspan="3">
+                    1&nbsp;&nbsp;Actualmente, el lugar en el que se levantará la edificación, ¿cuenta con cobertura a
+                    internet?
+                  </td>
+                  <td class="rcode">5001</td>
+                  <td class="rcell"><label><input type="radio" name="tec_internet"> Sí</label></td>
+                </tr>
+                <tr>
+                  <td class="lcell h40" colspan="3"></td>
+                  <td class="rcode">5002</td>
+                  <td class="rcell"><label><input type="radio" name="tec_internet"> No</label></td>
+                </tr>
+              </table>
+            </td>
+            <td class="box p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell" colspan="3">
+                    2&nbsp;&nbsp;Actualmente, el lugar en el que se levantará la edificación, ¿cuenta con cobertura a
+                    telefonía celular?
+                  </td>
+                  <td class="rcode">5003</td>
+                  <td class="rcell"><label><input type="radio" name="tec_cel"> Sí</label></td>
+                </tr>
+                <tr>
+                  <td class="lcell h40" colspan="3"></td>
+                  <td class="rcode">5004</td>
+                  <td class="rcell"><label><input type="radio" name="tec_cel"> No</label></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="b p6 sub">2. Acceso a la edificación</td>
+    </tr>
+    <tr>
+      <td class="b p6">Marque con una X, el tipo de acceso que tiene actualmente el lugar donde se levantará la
+        edificación.</td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:50%;">
+            <col style="width:50%;">
+          </colgroup>
+          <tr>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">4&nbsp;&nbsp;Calle o carretera adoquinada, pavimentada o de concreto</td>
+                  <td class="rcode">5005</td>
+                  <td class="rcell"><input type="radio" name="acceso"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">7&nbsp;&nbsp;Camino, sendero, chaquiñán</td>
+                  <td class="rcode">5008</td>
+                  <td class="rcell"><input type="radio" name="acceso"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">5&nbsp;&nbsp;Calle o carretera empedrada</td>
+                  <td class="rcode">5006</td>
+                  <td class="rcell"><input type="radio" name="acceso"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">8&nbsp;&nbsp;Río / mar / lago</td>
+                  <td class="rcode">5009</td>
+                  <td class="rcell"><input type="radio" name="acceso"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">6&nbsp;&nbsp;Calle o carretera lastrado o de tierra</td>
+                  <td class="rcode">5007</td>
+                  <td class="rcell"><input type="radio" name="acceso"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">9&nbsp;&nbsp;Otro (especifique)</td>
+                  <td class="rcode">5010</td>
+                  <td class="rcell"><input type="radio" name="acceso"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="b p6 sub">3. Ocupación de la edificación</td>
+    </tr>
+    <tr>
+      <td class="b p6">Marque con una X, el tipo de ocupación que tendrá la edificación.</td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:25%;">
+            <col style="width:25%;">
+            <col style="width:25%;">
+            <col style="width:25%;">
+          </colgroup>
+          <tr>
+            <td class="b p8" valign="top">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">
+                    <b>Aislado:</b><br>
+                    Edificación con un retiro frontal, otro posterior y dos laterales
+                  </td>
+                  <td class="rcode">5011</td>
+                  <td class="rcell"><input type="radio" name="ocup"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8" valign="top">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">
+                    <b>Pareado:</b><br>
+                    Edificación con un retiro frontal, uno posterior y uno lateral
+                  </td>
+                  <td class="rcode">5012</td>
+                  <td class="rcell"><input type="radio" name="ocup"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8" valign="top">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">
+                    <b>Continuo:</b><br>
+                    Edificación con retiro frontal, posterior y sin laterales. También edificaciones que poseen solo un
+                    retiro de fondo
+                  </td>
+                  <td class="rcode">5013</td>
+                  <td class="rcell"><input type="radio" name="ocup"></td>
+                </tr>
+              </table>
+            </td>
+            <td class="b p8" valign="top">
+              <table class="opt">
+                <tr>
+                  <td class="lcell">
+                    <b>Sobre línea de fábrica:</b><br>
+                    Edificación que mantendrá solo un retiro posterior y se permite el adosamiento a las colindancias
+                    frontal y laterales
+                  </td>
+                  <td class="rcode">5014</td>
+                  <td class="rcell"><input type="radio" name="ocup"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table class="outer">
+    <tr>
+      <td class="hdr">4. Uso residencial de la edificación y financiamiento</td>
+    </tr>
+    <tr>
+      <td class="body">
+        <div class="line title">En este apartado considere las siguientes definiciones:</div>
+        <div class="line"><span class="title">Edificación:</span> Indica el número de construcción/es, para las cuales
+          se solicita un permiso de construcción. Una edificación puede tener diversos usos (residencial y no
+          residencial); y, registrar una o varias unidades habitacionales (viviendas).</div>
+        <div class="line"><span class="title">Vivienda:</span> Es el cuarto o conjunto de cuartos, planificados para ser
+          utilizados como morada de una familia.</div>
+        <div class="line"><span class="title">Cuarto:</span> Es la pieza destinada a servir como sala, sala de estar,
+          estudio, dormitorio, comedor, cuarto de planchar, baños y cocinas.</div>
+        <div class="line"><span class="title">Dormitorio:</span> Es el aposento o pieza destinada, exclusivamente para
+          dormir, alojamiento o descanso.</div>
+        <div class="line"><span class="title">Área:</span> Comprende la suma de las superficies horizontales a
+          construirse en los diferentes pisos, distribuida según los usos que tenga en el proyecto de edificación, por
+          ejemplo; si de una edificación de 6 pisos se destinaron 4 para residencia, y 2 para almacenes, entonces en las
+          casillas 5048, 5119, 5129 se deberá informar las áreas correspondientes.</div>
+        <div class="line notes-title">Notas importantes:</div>
+        <div class="line"> En los montos de financiamiento de la edificación no incluir el valor del terreno.</div>
+        <div class="line"> Toda la información solicitada en esta sección debe ser llenada con los VALORES
+          correspondientes a las características de la edificación. Por ejemplo, si se planifica construir tres
+          edificaciones de dos viviendas cada una; y además cada vivienda tiene dos pisos y dos dormitorios, la
+          información se deberá registrar de la siguiente forma: casilla: 5016=3; casilla 5020=6; casilla 5028=12 y
+          casilla 5040=12.</div>
+      </td>
+    </tr>
+  </table>
+  <table class="outer">
+    <thead>
+      <tr>
+        <th class="hdr bh" rowspan="3" style="width:18%;">Tipo residencial</th>
+        <th class="hdr bh" rowspan="2" style="width:7%;">N° total de edificaciones<br>(1)</th>
+        <th class="hdr bh" rowspan="2" style="width:7%;">N° de viviendas en todas las edificaciones<br>(2)</th>
+        <th class="hdr bh" rowspan="2" style="width:9%;">N° de cuartos en todas las edificaciones<br>(3)= (4)+(5)+(6)
+        </th>
+        <th class="hdr bh" rowspan="2" style="width:7%;">N° de dormitorios en todas las edificaciones<br>(4)</th>
+        <th class="hdr bh" rowspan="2" style="width:7%;">N° de baños en todas las edificaciones<br>(5)</th>
+        <th class="hdr bh" rowspan="2" style="width:7%;">N° de cocinas en todas las edificaciones<br>(6)</th>
+        <th class="hdr bh" rowspan="2" style="width:7%;">N° de pisos en todas las edificaciones<br>(7)</th>
+        <th class="hdr bh" rowspan="2" style="width:8%;">Área total a construirse en todas las edificaciones<br>(8)</th>
+        <th class="hdr bh" colspan="3">Financiamiento de la edificación<br>(Valores en dólares)</th>
+      </tr>
+      <tr>
+        <th class="hdr bh" rowspan="1" style="width:8%;">Monto total de la edificación<br>(9)=(10)+(11)</th>
+        <th class="hdr bh" colspan="2">Detalle el monto de la edificación recaudado por:</th>
+        <br>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="left">Edificaciones con una vivienda</td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5015</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5019</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5023</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5027</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5031</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5035</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5039</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5044</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5052</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5054</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5056</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">Edificaciones con dos viviendas</td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5016</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5020</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5024</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5028</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5032</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5036</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5040</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5045</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5050</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5055</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5060</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">Edificaciones con tres o más viviendas<br><span class="small">(Edificios de apartamentos o
+            bloques multifamiliares)</span></td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5017</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5021</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5025</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5029</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5033</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5037</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5041</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5046</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5051</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5057</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5061</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="left">Garage para uso exclusivo de la vivienda</td>
+        <td class="grey">
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td class="grey">
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td class="grey">
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td class="grey">
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td class="grey">
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td class="grey">
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5047</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="total">
+        <td>Total residencial</td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5018</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5022</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5026</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5030</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5034</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5038</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5042</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5048</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5052</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5058</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="ct">
+            <tr>
+              <td class="code">5063</td>
+            </tr>
+            <tr>
+              <td><input class="ibox" type="text"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="outer">
+    <tr>
+      <td class="hdr">5. Uso no residencial de la edificación y financiamiento</td>
+    </tr>
+    <tr>
+      <td class="note">
+        <span class="bold">Nota:</span>
+        La columna 14 hace referencia a la accesibilidad de todas las personas de la forma más autónoma y natural
+        posible en condiciones de seguridad, comodidad, libre movilidad y espacios especializados (parqueaderos,
+        señalética, etc.).
+      </td>
+    </tr>
+  </table>
+  <table class="outer">
+    <colgroup>
+      <col class="c1">
+      <col class="c2">
+      <col class="c3">
+      <col class="c4">
+      <col class="c5">
+      <col class="c6">
+      <col class="c7">
+      <col class="c8">
+      <col class="c9">
+      <col class="c10">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="hdr bh" rowspan="3">Tipo no residencial</th>
+        <th class="hdr bh" rowspan="2">N° total de edificaciones<br>(12)</th>
+        <th class="hdr bh" rowspan="2">Indique el aforo de la edificación<br>(número de personas)<br>(13)</th>
+        <th class="hdr bh" rowspan="2">Cuentan con características de accesibilidad universal<br>(SI–NO)<br>(14)</th>
+        <th class="hdr bh" rowspan="2">N° de baños en todas las edificaciones<br>(15)</th>
+        <th class="hdr bh" rowspan="2">N° de pisos en todas las edificaciones<br>(16)</th>
+        <th class="hdr bh" rowspan="2">Área total a construirse en todas las edificaciones<br>(17)</th>
+        <th class="hdr bh" colspan="3">Financiamiento de la edificación<br>(Valores en dólares)</th>
+      </tr>
+      <tr>
+        <th class="hdr bh" rowspan="1">Monto total de la edificación<br>(18)=(19)+(20)</th>
+        <th class="hdr bh" colspan="2">Detalle el monto de la edificación recaudado por:</th>
+      </tr>
+      <tr>
+        <th class="hdr">Recursos propios<br>(19)</th>
+        <th class="hdr">Préstamos<br>(20)</th>
+        <th class="hdr" style="border-left:none; border-right:none;"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tr-fluid">
+        <td class="hdr">
+          Comercial (Almacenes, supermercados, bodega, tiendas, edificios para oficinas y/o consultorios, edificios de
+          parqueamiento, hoteles, restaurantes)
+        </td>
+        <td class="cell" data-code="5068"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5079"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5087">
+          <table class="mini">
+            <tr>
+              <td><label><input type= "text" name="acc1"> </label></td>
+              
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5097"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5100"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5110"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5130"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5141"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5152"><input class="ibox" type="text"></td>
+      </tr>
+
+      <tr>
+        <td class="">
+          Industrial o artesanal (Naves industriales y sus oficinas administrativas, bodegas, talleres, etc.)
+        </td>
+        <td class="cell" data-code="5069"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5080"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5088">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc2"> Sí</label></td>
+              <td><label><input type="radio" name="acc2"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5098"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5101"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5111"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5131"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5142"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5153"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Edificio Administrativo (De propiedad del Estado para funcionamiento de entidades públicas como ministerios,
+          institutos, bancos, etc.)</td>
+        <td class="cell" data-code="5070"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5081"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5089">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc3"> Sí</label></td>
+              <td><label><input type="radio" name="acc3"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5099"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5102"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5112"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5132"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5143"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5154"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Educación (Escuelas, Colegios, Universidades, etc.)</td>
+        <td class="cell" data-code="5071"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5082"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5090">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc4"> Sí</label></td>
+              <td><label><input type="radio" name="acc4"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5103"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5106"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5113"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5133"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5144"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5155"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Cultura (casa de la cultura, bibliotecas, museos, teatros, etc.)</td>
+        <td class="cell" data-code="5072"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5083"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5091">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc5"> Sí</label></td>
+              <td><label><input type="radio" name="acc5"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5104"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5107"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5114"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5134"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5145"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5156"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Edificaciones en Complejos Recreacionales, Estadios, Coliseos cerrados (Excluye canchas deportivas al aire
+          libre)</td>
+        <td class="cell" data-code="5073"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5084"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5092">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc6"> Sí</label></td>
+              <td><label><input type="radio" name="acc6"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5105"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5108"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5115"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5135"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5146"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5157"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Hospitales, clínicas y otros establecimientos de salud</td>
+        <td class="cell" data-code="5074"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5085"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5093">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc7"> Sí</label></td>
+              <td><label><input type="radio" name="acc7"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5109"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5116"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5117"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5136"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5147"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5158"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Transporte y comunicaciones (terminales terrestres, de ferrocarriles, edificaciones en aeropuertos,
+          centrales de teléfonos, telégrafos, etc.)</td>
+        <td class="cell" data-code="5075"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5086"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5094">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc8"> Sí</label></td>
+              <td><label><input type="radio" name="acc8"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5118"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5120"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5122"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5137"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5148"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5159"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Parqueaderos (si es para brindar este servicio, no para uso de viviendas o residencias)</td>
+        <td class="cell" data-code="5076"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5087a"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5095">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc9"> Sí</label></td>
+              <td><label><input type="radio" name="acc9"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5119"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5121"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5123"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5138"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5149"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5160"><input class="ibox" type="text"></td>
+      </tr>
+      <tr>
+        <td>Otros (especifique)</td>
+        <td class="cell" data-code="5077"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5088a"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5096">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acc10"> Sí</label></td>
+              <td><label><input type="radio" name="acc10"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5124"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5125"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5126"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5139"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5150"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5161"><input class="ibox" type="text"></td>
+      </tr>
+      <tr class="total">
+        <td>Total no residencial</td>
+        <td class="cell" data-code="5121"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5128"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5131a">
+          <table class="mini">
+            <tr>
+              <td><label><input type="radio" name="acctot"> Sí</label></td>
+              <td><label><input type="radio" name="acctot"> No</label></td>
+            </tr>
+          </table>
+        </td>
+        <td class="cell" data-code="5135"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5138a"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5142a"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5148"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5158a"><input class="ibox" type="text"></td>
+        <td class="cell" data-code="5163"><input class="ibox" type="text"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="hdr bh">VI. VALOR Y ORIGEN DEL FINANCIAMIENTO (En dólares, omita centavos)</td>
+    </tr>
+    <tr>
+      <td style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:60%;">
+            <col style="width:40%;">
+          </colgroup>
+          <tr>
+            <td class="b sub" style="border-right:none; padding:8px 10px;">1. Avalúo comercial estimado del terreno
+              (Valor en dólares)</td>
+            <td class="cell" data-code="6001">
+              <input class="ibox" type="text">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:8px 10px;">
+        2. De las edificaciones que construirá con recursos propios y/o préstamos, señaladas en las columnas 10, 11, 19
+        y 20 de la sección V, indique el monto del financiamiento según la siguiente desagregación:
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:35%;">
+            <col style="width:15%;">
+            <col style="width:35%;">
+            <col style="width:15%;">
+          </colgroup>
+          <tr>
+            <th class="hdr bh br2">Financiamiento por recursos propios</th>
+            <th class="hdr bh br2">Monto de las edificaciones<br>(Valor en dólares)</th>
+            <th class="hdr bh br2">Financiamiento por recursos provenientes de préstamos</th>
+            <th class="hdr bh">Monto de las edificaciones<br>(Valor en dólares)</th>
+          </tr>
+          <tr>
+            <td class="cell" data-code="6002">Recursos propios personales<br><span style="font-size:12px;">(Ahorros,
+                cesantías, remesas, indemnizaciones, etc.)</span></td>
+            <td class="cell" data-code="6003"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6008">Préstamos del BIESS, ISSFA, ISSPOL</td>
+            <td class="cell" data-code="6009"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell" data-code="6004">Recursos propios de empresas y constructoras privadas<br><span
+                style="font-size:12px;">(Incluye ingresos por venta de planos, construcciones terminada, etc.)</span>
+            </td>
+            <td class="cell" data-code="6005"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6010">Préstamos de cooperativas</td>
+            <td class="cell" data-code="6011"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell" data-code="6006">Recursos propios de las mutualistas</td>
+            <td class="cell" data-code="6007"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6012">Préstamos de mutualistas</td>
+            <td class="cell" data-code="6013"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell" data-code="6014">Recursos propios gobierno central, provincial, seccional, etc.</td>
+            <td class="cell" data-code="6015"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6016">Bancos privados</td>
+            <td class="cell" data-code="6017"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell" data-code="6018">Otros (especifique)</td>
+            <td class="cell" data-code="6019"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6020">Banco de Desarrollo del Ecuador</td>
+            <td class="cell" data-code="6021"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell">&nbsp;</td>
+            <td class="cell"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6022">Corporación Financiera Nacional</td>
+            <td class="cell" data-code="6023"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell">&nbsp;</td>
+            <td class="cell"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6024">Bono, incentivo o subsidio de vivienda (MIDUVI)</td>
+            <td class="cell" data-code="6025"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="cell">&nbsp;</td>
+            <td class="cell"><input class="ibox" type="text"></td>
+            <td class="cell br2" data-code="6026">Otros préstamos (especifique)</td>
+            <td class="cell" data-code="6027"><input class="ibox" type="text"></td>
+          </tr>
+          <tr>
+            <td class="hdr grey">Total (debe ser igual a la suma de las casillas 5058 + 5151)</td>
+            <td class="cell grey" data-code="6028"><input class="ibox" type="text"></td>
+            <td class="hdr grey br2">Total (debe ser igual a la suma de las casillas 5063 + 5162)</td>
+            <td class="cell grey" data-code="6029"><input class="ibox" type="text"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="b" style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:70%;">
+            <col style="width:15%;">
+            <col style="width:15%;">
+          </colgroup>
+          <tr>
+            <td class="b" style="border-right:none; padding:8px 10px;">
+              3. ¿La edificación ha sido construida con un fideicomiso? (Marque con una X su respuesta).
+            </td>
+            <td class="cell" data-code="6016" style="text-align:center;">
+              <label><input type="radio" name="fidei"> Sí</label>
+            </td>
+            <td class="cell" data-code="6017" style="text-align:center;">
+              <label><input type="radio" name="fidei"> No</label>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="hdr bh">VII. SEGMENTO DEL FINANCIAMIENTO (Si la construcción es exclusiva para fines NO RESIDENCIALES,
+        omita el llenado de esta sección)</td>
+    </tr>
+    <tr>
+      <td style="padding:0;">
+        <table style="width:100%; table-layout:fixed;">
+          <colgroup>
+            <col style="width:38%;">
+            <col style="width:27%;">
+            <col style="width:35%;">
+          </colgroup>
+
+          <tr>
+            <td class="hdr" colspan="3" style="border-bottom:none;">
+              1. De las viviendas que se construirán detalladas en la columna 2 de la sección V, ¿alguna cumple los
+              requisitos o ha sido financiada como viviendas de interés social o viviendas de interés público dentro del
+              programa "Casa para todos"?
+            </td>
+          </tr>
+
+          <tr>
+            <!-- Columna IZQ: Sí/No -->
+            <td style="border-right:none;">
+              <table class="mini-quiet" style="width:100%; table-layout:fixed; border-collapse:collapse;">
+                <tr>
+                  <td class="cell" data-code="7001" style="width:30px; border-right:none;">&nbsp;</td>
+                  <td style="border-left:none; border-right:none;">Sí</td>
+                  <td style="border-left:none; width:40px; text-align:center;">
+                    <input type="radio" name="seg_si_no">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="cell" data-code="7002" style="border-right:none;">&nbsp;</td>
+                  <td style="border-left:none; border-right:none;">No</td>
+                  <td style="border-left:none; text-align:center;">
+                    <input type="radio" name="seg_si_no">
+                  </td>
+                </tr>
+              </table>
+            </td>
+
+            <!-- Columna CENTRO: caja informativa -->
+            <td class="cell" data-code="" style="border-left:none; border-right:none;">
+              <div class="box" style="border:1px solid #000; padding:10px; text-align:center;">
+                Si respondió “Sí”, detalle el número de viviendas que construirá según el tipo que corresponda.
+              </div>
+            </td>
+
+            <!-- Columna DERECHA: tabla de proyecto -->
+            <td style="border-left:none;">
+              <table class="mini-quiet" style="width:100%; table-layout:fixed; border-collapse:collapse;">
+                <tr>
+                  <th style="width:70%; border:0; padding:6px 8px; text-align:left;">Proyecto de vivienda</th>
+                  <th style="width:30%; border:0; padding:6px 8px; text-align:left;">N° de viviendas</th>
+                </tr>
+                <tr>
+                  <td style="border:0; padding:6px 8px;">1&nbsp; Viviendas de interés social</td>
+                  <td class="cell" data-code="7003" style="border:0; padding:6px 8px;">
+                    <input class="ibox" type="text"
+                      style="width:100%; height:26px; border:none; border-bottom:1px solid #000; outline:none; background:transparent;">
+                  </td>
+                </tr>
+                <tr>
+                  <td style="border:0; padding:6px 8px;">2&nbsp; Vivienda de interés público</td>
+                  <td class="cell" data-code="7004" style="border:0; padding:6px 8px;">
+                    <input class="ibox" type="text"
+                      style="width:100%; height:26px; border:none; border-bottom:1px solid #000; outline:none; background:transparent;">
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <table class="outer">
+    <tr>
+      <th class="hdr bh br2">DATOS DEL INFORMANTE (y/o profesional de la construcción)</th>
+      <th class="hdr bh">DATOS DE LA AUTORIDAD MUNICIPAL</th>
+    </tr>
+    <tr>
+      <td class="br2">
+        <span class="num">1.</span> Nombres y apellidos
+        <input class="ibox" type="text">
+      </td>
+      <td>
+        <span class="num">1.</span> Nombres y apellidos
+        <input class="ibox" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td class="br2">
+        <span class="num">2.</span> Profesión
+        <input class="ibox" type="text">
+      </td>
+      <td style="padding:0;">
+        <table style="width:100%; table-layout:fixed; border-collapse:collapse;">
+          <colgroup>
+            <col style="width:45%;">
+            <col style="width:55%;">
+          </colgroup>
+          <tr>
+            <td style="border-right:1px solid #000; padding:6px 8px;">
+              <span class="num">2.</span> Cargo
+              <input class="ibox" type="text">
+            </td>
+            <td style="padding:6px 8px;">
+              <span class="num">3.</span> Profesión
+              <input class="ibox" type="text">
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="br2">
+        <span class="num">3.</span> Dirección de contacto
+        <input class="ibox" type="text">
+      </td>
+      <td>
+        <span class="num">4.</span> N° del permiso
+        <input class="ibox" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td class="br2" style="padding:0;">
+        <table style="width:100%; border-collapse:collapse; table-layout:fixed;">
+          <colgroup>
+            <col style="width:50%;">
+            <col style="width:50%;">
+          </colgroup>
+          <tr>
+            <td style="border-right:1px solid #000; padding:6px 8px;">
+              <span class="num">4.</span> Telf. Convencional
+              <table class="grid small">
+                <tr>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                </tr>
+              </table>
+            </td>
+
+            <td style="padding:6px 8px;">
+              <span class="num">5.</span> Telf. Celular
+              <table class="grid small">
+                <tr>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+      <td style="padding:0;">
+        <table style="width:100%; table-layout:fixed; border-collapse:collapse;">
+          <colgroup>
+            <col style="width:62%;">
+            <col style="width:38%;">
+          </colgroup>
+          <tr>
+            <td style="border-right:1px solid #000; padding:6px 8px;">
+              <span class="num">5.</span> Fecha de emisión del permiso de construcción
+            </td>
+            <td style="padding:6px 8px;">
+              Día&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Año
+              <table class="grid tiny" style="margin-top:4px;">
+                <tr>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td style="border:none;"><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td style="border:none;"><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="br2">
+        <span class="num">6.</span> Firma
+        <input class="ibox" type="text">
+      </td>
+      <td>
+        <span class="num">6.</span> Firma
+        <input class="ibox" type="text">
+      </td>
+    </tr>
+    <tr>
+      <td class="br2" style="padding:0;">
+        <table style="width:100%; border-collapse:collapse; table-layout:fixed;">
+          <colgroup>
+            <col style="width:30%;">
+            <col style="width:70%;">
+          </colgroup>
+          <tr>
+            <td style="border-right:1px solid #000; padding:6px 8px;">
+              <span class="num">7.</span> Cédula o RUC
+            </td>
+            <td style="padding:6px 8px;">
+              <table class="grid small">
+                <tr>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td style="padding:0;">
+        <table style="width:100%; border-collapse:collapse; table-layout:fixed;">
+          <colgroup>
+            <col style="width:28%;">
+            <col style="width:72%;">
+          </colgroup>
+          <tr>
+            <td style="border-right:1px solid #000; padding:6px 8px;">
+              <span class="num">7.</span> Cédula o RUC
+            </td>
+            <td style="padding:6px 8px;">
+              <table class="grid small">
+                <tr>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                  <td><input class="digit" type="text" maxlength="1" inputmode="numeric"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td style="border-left:none; border-right:none;">
+        <div class="head-row">
+          <span class="label">Observaciones:</span>
+          <span class="dash"></span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td style="border-left:none; border-right:none;">
+        <textarea class="ta-lines" placeholder=""></textarea>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table class="outer">
+    <tr>
+      <td class="content">
+<span class="titulo-formulario">INSTRUCTIVO PARA EL LLENADO DEL FORMULARIO</span>
+<br>
+        El presente formulario se encuentra amparado en la Ley de Estadística vigente, cuyos artículos pertinentes
+        establecen:<br><br>
+        <span class="bold">Art. 20.</span> “Todas las personas naturales o jurídicas domiciliadas, residentes, o que
+        tengan alguna actividad en el país, sin exclusión alguna, están obligadas a suministrar, cuando sean legalmente
+        requeridas, los datos o informaciones exclusivamente de carácter estadístico o censal, referentes a sus personas
+        y a las que de ellas dependan, a sus propiedades, a las operaciones de sus establecimientos o empresas, al
+        ejercicio de su profesión u oficio, y en general a toda clase de hechos y actividades que puedan ser objeto de
+        investigación estadística o censal”.<br><br>
+        <span class="bold">Art. 21.</span> “Los datos individuales que se obtengan para efecto de estadísticas y censos
+        son de carácter reservado; en consecuencia, no podrán darse a conocer informaciones individuales de ninguna
+        especie, ni podrán ser utilizados para otros fines como de tributación o conscripción, investigaciones
+        judiciales y, en general, para cualquier objeto distinto del propiamente estadístico o censal (…)”.<br><br>
+        <span class="bold">Nota:</span> Este formulario debe ser utilizado para todas las edificaciones, ampliaciones y
+        reconstrucciones que se realicen, cualquiera que sea el valor o superficie a construirse.<br><br>
+        <span class="bold">INDICACIONES GENERALES</span><br>
+         En las preguntas de selección, por favor marque únicamente una de las opciones presentadas.<br><br>
+        <span class="bold">I. UBICACIÓN E IDENTIFICACIÓN DE LA EDIFICACIÓN</span><br>
+         En las casillas 1001 a 1006 debe consignarse la información referente a la ubicación geográfica exacta que
+        tendrá la edificación.<br>
+         En la casilla 1009 debe indicarse si la edificación será de carácter privada (1009.1) o pública (1009.2).<br>
+         En las casillas 1011 y 1012 anote el nombre del propietario y del proyectista y su número de cédula o RUC.<br>
+         En la casilla 1013 registre las coordenadas de georreferenciación (UTM).<br>
+         En la casilla 1014 ingrese la distancia en metros al espacio verde municipal o público más cercano.<br>
+         En la casilla 1015 indique si el proyectista cuenta con documento habilitante para el ejercicio de su
+        profesión.<br><br>
+        <span class="bold">II. TIPO DE OBRA</span><br>
+         Seleccione la alternativa marcando con una X: nueva construcción (2000), ampliación hacia arriba (2001),
+        reconstrucción (2002) o ampliación horizontal (2003).<br>
+         Nueva construcción: obra desde cimientos; Ampliación hacia arriba: se añaden pisos; Ampliación horizontal:
+        nueva parte al mismo nivel con comunicación interior; Reconstrucción: obras que no afectan cimientos ni
+        estructura; si se derroca y levanta otra, es nueva construcción.<br><br>
+        <span class="bold">III. DATOS DEL TERRENO</span><br>
+         3001: superficie total del terreno (m²). No menor al área de planta baja (3004).<br>
+         3002: área total a construirse (m²). 3005: espacios verdes/patios. 3006: patios/canchas (si aplica). 3003:
+        área previamente construida (solo ampliaciones).<br><br>
+        <span class="bold">IV. MATERIALES PREDOMINANTES A SER UTILIZADOS EN LA EDIFICACIÓN</span><br>
+         Marque con X el material predominante en cada fase: cimentación, pisos, estructura, paredes y cubierta/techo
+        (una sola casilla por fase).<br><br>
+        <span class="bold">V. USO, CARACTERÍSTICAS Y FINANCIAMIENTO DE LA EDIFICACIÓN</span><br>
+         Informe número total de edificaciones, viviendas, cuartos, dormitorios, baños, cocinas y pisos, así como el
+        área total a construirse (m²).<br>
+         Registre el monto total de la edificación y su desglose entre recursos propios y préstamos (en
+        dólares).<br><br>
+        <span class="bold">VI. VALOR Y ORIGEN DEL FINANCIAMIENTO</span><br>
+         6001: avalúo comercial estimado del terreno. 6002-6007: recursos propios. 6008–6027: préstamos. Los totales
+        deben coincidir con la sección V (5058/5151 y 5063/5162).<br>
+         6016/6017: indique si la edificación se construye mediante fideicomiso.<br><br>
+        <span class="bold">VII. SEGMENTO DEL FINANCIAMIENTO</span><br>
+         Indique si alguna vivienda califica o ha sido financiada como interés social o público (programa “Casa para
+        todos”); detalle cantidades en 7003 y 7004.
+      </td>
+    </tr>
+  </table>
+</body>
+<script>
+  // VERSIÓN RÁPIDA - Ejecutar en consola
+  (function () {
+    // Estilos
+    const style = document.createElement('style');
+    style.textContent = `
+        * { font-size: 8px !important; line-height: 1.1 !important; }
+        .input-cuadro { width: 12px !important; height: 12px !important; font-size: 8px !important; 
+                       text-align: center !important; border: 1px solid #000 !important; margin: 1px !important; }
+        .checkbox-circulo { width: 10px !important; height: 10px !important; border-radius: 50% !important; 
+                           border: 1px solid #000 !important; appearance: none !important; }
+        .checkbox-circulo:checked { background: #000 !important; }
+    `;
+    document.head.appendChild(style);
+
+    // Crear inputs en lugares específicos
+    function crearInputs(contenedor, num) {
+      for (let i = 0; i < num; i++) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.maxLength = 1;
+        input.className = 'input-cuadro';
+        contenedor.appendChild(input);
+      }
+    }
+
+    // Buscar áreas para inputs
+    document.querySelectorAll('div').forEach(div => {
+      const texto = div.textContent;
+      if (texto.includes('Telf.') || texto.includes('Cédula') || texto.includes('RUC')) {
+        const contenedor = document.createElement('div');
+        crearInputs(contenedor, 10);
+        div.appendChild(contenedor);
+      }
+    });
+
+    // Crear checkboxes para opciones
+    const opciones = ['Nueva construcción', 'Ampliación hacia arriba', 'Reconstrucción'];
+    opciones.forEach(opcion => {
+      document.querySelectorAll('div').forEach(div => {
+        if (div.textContent.includes(opcion) && div.textContent.length < 50) {
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.className = 'checkbox-circulo';
+          div.prepend(checkbox);
+        }
+      });
+    });
+
+    console.log('✅ Formulario convertido: inputs y checkboxes agregados');
+  })();
+
+</script>
+
+</html>
